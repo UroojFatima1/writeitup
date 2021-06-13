@@ -7,6 +7,52 @@ scroll-behavior: smooth;}
     max-width: auto;
     opacity: 100%;}
 
+
+@media only screen and (max-width:998px) {
+    html{font-size: 55%;
+        }
+}
+@media only screen and (max-width:768px){
+    html{font-size:45%;
+     }
+}
+@media only screen and (max-width:656px){
+    html{font-size:40%;
+     }
+}
+@media only screen and (max-width:586px){
+    html{font-size:35%;
+     }
+}
+@media only screen and (max-width:512px){
+    html{font-size:30%;
+     }
+}
+@media only screen and (max-width:442px){
+    html{font-size:25%;
+     }
+}
+@media only screen and (max-width:376px){
+    html{font-size:20%;
+     }
+}
+@media only screen and (max-width:292px){
+    html{font-size:15%;
+     }
+}
+@media only screen and (max-width:220px){
+    html{font-size:10%;
+     }
+}
+@media only screen and (max-width:146px){
+    html{font-size:5%;
+     }
+}
+@media only screen and (max-width:76px){
+    html{font-size:2%;
+     }
+}
+
 nav{position: fixed;
     margin:auto;
     width: 100%;
@@ -66,18 +112,6 @@ body::-webkit-scrollbar-thumb {
     outline: 1px solid slategrey;
   }
 
-@media only screen and (max-width:998px) {
-    html{font-size: 55%;
-        }
-}
-@media only screen and (max-width:768px){
-    html{font-size:45%;
-     }
-}
-@media only screen and (max-width:538px){
-    html{font-size:35%;
-     }
-}
 .container{
     background-image: linear-gradient(0deg,rgba(0,0,0,.95),rgba(0,0,0,.8) 25%,rgba(0,0,0,.8) 50%,rgba(0,0,0,.7) 75%,rgba(0,0,0,.7)100%),url(books.jpeg);
     background-size: cover;
