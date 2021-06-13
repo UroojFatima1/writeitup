@@ -11,12 +11,15 @@ nav{position: fixed;
     margin:auto;
     width: 100%;
     background-color:black;
-    flex-direction: row;}
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;}
 
-ul li{
+ul li{justify-content: left;
     margin-left: 1.3rem;
     list-style: none;
     display: inline-block;
+    margin-top: 1rem;
 }
 
 ul li a{
@@ -30,20 +33,25 @@ ul li a{
     font-family: 1rem;
     transition: all ease 0.25s;
     font-weight: 600;
+   
+    
 }
 
 ul li a:hover{
     background-color:gray;
 }
 
-.bt{
-    display: flex;
+.bt{justify-content: space-between;
     align-items: right;
     flex-direction: row;
-    justify-items: right;
-    justify-content: right;}
+ }
 
-.bt1{justify-items: right;}
+.bt1{justify-content: right;
+    padding: 0.5rem;
+    margin:1rem 2rem 1rem 0rem;
+}
+
+#l{padding: 0.5rem 1rem 0.5rem 1rem;}
 
 body::-webkit-scrollbar {
     width: 1em;
@@ -212,8 +220,7 @@ body::-webkit-scrollbar-thumb {
     color: black;
 }
 
-#b1{
-    padding: 1rem 2rem 1rem 2rem;}
+#b1{padding: 1rem 2rem 1rem 2rem;}
 
 #b2{margin-left: 2.2rem;
     padding: 1rem 1.5rem 1rem 1.5rem;}
