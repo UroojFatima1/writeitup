@@ -10,10 +10,6 @@ function moveSlide(dir) {
 }
 s = document.getElementsByClassName("arrow");
 v = document.getElementById("scroll");
-
-
-s.addEventListener("click", dis());
-
+s.addEventListener("click", dis);
 function dis() {
-    v.style.display = "flex";
-}
+    v.style.display = "flex";}

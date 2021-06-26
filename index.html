@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>   <!---To add icons-->
+    <link rel="stylesheet" href="style.css">   
+    <link rel="preconnect" href="https://fonts.gstatic.com">   <!---Fonts-->
     <title>WriteItUp</title>
 </head>
 
 <body>
+    <!---nav bar-->
     <nav class="topnav">
         <ul class="nav">
             <li><a href="#">Home</a></li>
@@ -23,6 +24,7 @@
             <button id="l" class="bt1">Login</button>
         </div>
     </nav>
+      <!---Content for cover page-->
     <div class="container"><br><br>
         <img class="logo" src="lo.png">
         <div class="all">
@@ -37,19 +39,32 @@
                 <button class="buttn" id="b2"> Signup</button>
             </div>-->
             <span class="readmore">Read More</span>
-            <span class="arrow blinking" href="#scroll">&#10094;</a>
+            <span><a class="arrow blinking" href="#scroll">&#10094;</a></span> 
+          
         </div>
     </div>
     <hr>
+      <!---About us section-->
     <section id="scroll">
+        <!---shape animation-->
+        <ul class="box-area">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+          <!---content-->
         <h6 id="aboutus">About Us</h6>
         <div class="slider">
             <div id="text">
                 <span>WriteItUp is an online storytelling platform, <br>where enthusiastic writers can publish their
                     work,<br /> and together with the readers, a community is established<br /> where the writers
-                    receive
-                    honest feedback about their work.</span>
+                    receive honest feedback about their work.</span>
             </div>
+            <!---slider-->
             <div class="wrapper" id="slider">
                 <div class="slide">
                     <img src="1.png">
@@ -69,15 +84,65 @@
                 <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
                 <a class="next" onclick="moveSlide(1)">&#10095;</a>
             </div>
+          </div>
+    </section>
+    <hr>
+
+    <!---footer-->
+    <footer>
+        <!---complete section-->
+        <div class="main-content">
+          <!---left area-->
+          <div class="left box">
+            <h2>Contact Us</h2>
+            <div class="content">
+              <div class="flex">
+                <div class="place">
+                  <span class="fas fa-map-marker-alt f" ></span>
+                  <span  class="text">Karachi, Pakistan</span>
+                </div>
+                <div class="phone">
+                  <span class="fas fa-phone-alt f"></span>
+                  <span class="text">+089-765432100</span>
+                </div>
+                <div class="email">
+                  <span class="fas fa-envelope f"></span>
+                  <span class="text">abc@example.com</span>
+                </div>
+                <div class="fb">
+                  <span class="fab fa-facebook-f f"><a href="https://www.instagram.com/"></a></span>
+                  <span class="text">fb/writeitup</span>
+                </div>
+                <div class="insta">
+                  <span class="fab fa-instagram f"><a href="https://www.instagram.com/"></a></span>
+                  <span class="text">insta/writeitup</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!---right area-->
+          <div class="right box">
+            <h2>Need help?</h2>
+            <div class="content"></div>
+              <form action="#">
+                <div class="email">
+                  <div class="text">Email *</div>
+                  <input type="email" required>
+                </div>
+                <div class="msg">
+                  <div class="text">Message *</div>
+                  <textarea rows="3" cols="20" required></textarea>
+                </div>
+                <!---send button-->
+                <div class="btn">
+                  <button type="submit">Send</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-    </section>
-    <section id="about">
-        <div>
-
-        </div>>
-
-    </section>
+      </footer>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
