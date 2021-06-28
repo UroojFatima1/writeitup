@@ -55,7 +55,7 @@ ul li a{
     transition: all ease 0.25s;
     font-weight: 600;  
 }
-ul li a:hover,.active{
+ul li a:hover{
     background-color:gray;
     cursor: pointer;
 }

@@ -13,6 +13,11 @@ function carousel() {
   x[slideIndex-1].style.transition="all 2s"
   setTimeout(carousel, 4000); // Change image every 4 seconds
 }
+s = document.getElementsByClassName("arrow");
+v = document.getElementsById("scroll");
+s.addEventListener("click", dis);
+function dis() {
+    v.style.display = "flex";}
 /*let currentSlide = 0;
 function moveSlide(dir) {
     if (dir == 1 && currentSlide == 4) { currentSlide = -1; }
@@ -23,9 +28,5 @@ function moveSlide(dir) {
     slides.forEach(slide => slide.style.display = "none");
     slides[currentSlide].style.display = "flex";
 }*/
-s = document.getElementsByClassName("arrow");
-v = document.getElementsById("scroll");
-s.addEventListener("click", dis);
-function dis() {
-    v.style.display = "flex";}
+
 
