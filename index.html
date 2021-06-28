@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>   <!---To add icons-->
     <link rel="stylesheet" href="style.css">   
     <link rel="preconnect" href="https://fonts.gstatic.com">   <!---Fonts-->
@@ -21,7 +27,7 @@
           <li><a href="#features" onclick="addactive">Features</a></li>
           <li><a href="#scroll" onclick="addactive">About</a></li>
           <li><a href="#footer" onclick="addactive">Contact</a></li>
-          <li><a href="login.html" onclick="addactive">Signin</a></li>
+          <li><a href="signin.html" onclick="addactive">Sign In</a></li>
           <a class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
           </a>
@@ -42,7 +48,7 @@
                 <button class="buttn" id="b2"> Signup</button>
             </div>-->
             <span class="readmore">Read More</span>
-            <span><a class="arrow blinking" href="#scroll">&#10094;</a></span> 
+            <span><a class="arrow blinking" href="#features">&#10094;</a></span> 
           
         </div>
     </div>
@@ -52,28 +58,28 @@
       <!---content-->
       <div>
       <div class="slide">
-      <div class="feat-text">
-        <div class="ft" >Get Publish</div>
-        <div class="fd">Show your next big idea to the world.</div></div>
-      <div class="feat-img"><img src="publish.jpeg" class="fm"></div>
-    </div>
-      <div class="slide">
         <div class="feat-text">
-        <div class="ft" >Lots of stories</div>
-        <div class="fd">Browse for your favourite story from our exquisite collection</div></div>
+        <div class="ft" >Lots Of Stories.</div>
+        <div class="fd">Browse for your favourite story from our exquisite collection.</div></div>
       <div class="feat-img"><img src="lots.png" class="fm"></div>
     </div>
       <div class="slide">
         <div class="feat-text">
-        <div class="ft" >Available on go</div>
-        <div class="fd">Get acces to writeups from wide range of devices</div></div>
+        <div class="ft" >Available On The Go.</div>
+        <div class="fd">Get acces to writeups from a wide range of devices.</div></div>
       <div class="feat-img"><img src="responsive.png" class="fm"></div>
     </div>
       <div class="slide">
         <div class="feat-text">
-        <div class="ft" >Chat</div>
-        <div class="fd">Interact with people in community.</div></div>
+        <div class="ft" >Chat With Members.</div>
+        <div class="fd">Interact with people in the community.</div></div>
       <div class="feat-img"><img src="chat.png" class="fm"></div>
+    </div>
+    <div class="slide">
+      <div class="feat-text">
+        <div class="ft" >Get Published.</div>
+        <div class="fd">Share your next big idea with the world.</div></div>
+      <div class="feat-img"><img src="publish.jpeg" class="fm"></div>
     </div>
     </div>
       
@@ -82,9 +88,10 @@
       <!---About us section-->
     <section id="scroll">
         <!---content-->
-        <h6 class="aboutus">About Us</h6>
         <div class="imagetext">
+
           <span class="abouttext">
+            <h6 class="aboutus">About Us</h6>
               WriteItUp is an online storytelling platform, <br>where enthusiastic writers can publish their
                   work,<br /> and together with the readers, a community is established<br /> where the writers
                   receive honest feedback about their work.</span>
@@ -143,11 +150,11 @@
             <div class="content"></div>
               <form action="form.php" method="POST">
                 <div class="email">
-                  <div class="text">Email *</div>
+                  <div class="text">Email</div>
                   <input type="email" placeholder="Email" required>
                 </div>
                 <div class="msg">
-                  <div class="text">Message *</div>
+                  <div class="text">Message</div>
                   <textarea rows="3"  placeholder="Message" required></textarea>
                 </div>
                 <!---send button-->

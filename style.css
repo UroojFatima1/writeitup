@@ -5,7 +5,9 @@ scroll-behavior: smooth;}
     padding: 0rem;
     height: fit-content;
     max-width: auto;
-    opacity: 100%;}
+    opacity: 100%;
+    font-family: 'Josefin Slab', serif;
+}
 
 /*nav bar*/
 nav{height: fit-content;
@@ -27,12 +29,12 @@ nav{height: fit-content;
     list-style: none;
     text-transform: uppercase;
     color: white;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 2rem;
     letter-spacing: 0.25rem;
-    padding: 1rem;
-    font-weight: 600;
-    margin-left: 4rem;}
+    padding: 1.5rem 0;
+    margin-left: 2rem;
+    font-family: 'Fredericka the Great', cursive;
+}
 
 .topnav ul li{
     margin-bottom: 1.55rem;
@@ -103,7 +105,7 @@ body::-webkit-scrollbar-thumb {
     height: 7rem;
     overflow: visible;
     white-space: nowrap;
-    font-family: Arial;
+    font-family: 'Josefin Slab', serif;
     font-weight: bold;
     color:white;
     margin-top: 0.25rem;
@@ -146,7 +148,7 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-family: sans-serif;
+    font-family: 'Fredericka the Great', cursive;
     font-size: 2rem;
     color:white;
     margin: auto;
@@ -180,9 +182,10 @@ body::-webkit-scrollbar-thumb {
     font-size: 7rem;
     margin-left: 3rem;
     margin-top:20rem;
-    font-weight: bold;}
+    font-family: 'Fredericka the Great', cursive;
+}
 .feat-text{
-    background-color: rgb(18, 90, 124);
+    background-image: linear-gradient(-45deg, #299be7,#176ca5);
     width:55%;
     height:100vh;
     margin:0;
@@ -206,29 +209,26 @@ body::-webkit-scrollbar-thumb {
 .imageabout{margin-top: 1rem;
 margin-right: 0rem;}
 /*aboutus heading*/
-.aboutus{display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.aboutus{
+    font-family: 'Fredericka the Great', cursive;
     font-size: 4rem;
     color:black;
-    margin: auto;
-    margin-top:  4rem ;
+    margin:  4rem ;
 }
 /*about us text*/
 .abouttext {margin-left:5rem ;
     margin-top:10rem;
     margin:auto;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 800;
     font-size: 2.5rem;
     color:black;
     line-height: 4rem;}
 
-.abouttext::first-letter {
+/*.abouttext::first-letter {
     font-size: 250%;
     margin-left: 0rem;
-}
+}*/
 /*animation on about us*/
 
 /*.box-area {
@@ -324,7 +324,8 @@ footer{background:
 .box h2{margin-top: 1rem;;
     font-size: 1.4rem;
     font-weight: 600;
-    text-transform: uppercase;}  
+    text-transform: uppercase;
+    font-family: 'Fredericka the Great', cursive;}  
 
 .box .content{margin: 1.5rem 0 0 0;
     position: relative;}
@@ -340,7 +341,7 @@ footer{background:
     content: '';
     height: 0.125rem;
     width: 15%;
-    background:rgb(18, 90, 124);
+    background-image: linear-gradient(-45deg, #299be7,#176ca5);
     top: -0.625rem;}
 
 /*left section*/
@@ -352,7 +353,7 @@ margin-left:1.2rem;}
 /*icons*/
 .left .content .f{
     font-size: 1.4rem;
-    background: rgb(18, 90, 124);
+    background-image: linear-gradient(-45deg, #299be7,#176ca5);
     height:3rem;
     width: 3rem;
     line-height:2.813rem;
@@ -415,7 +416,7 @@ margin-left:1.7rem;}
     width: 60%;
     border: none;
     outline: none;
-    background: rgb(18, 90, 124);;
+    background-image: linear-gradient(-45deg, #299be7,#176ca5);;
     font-size: 2rem;
     font-weight: 500;
     cursor: pointer;
