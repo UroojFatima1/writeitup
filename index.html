@@ -17,11 +17,11 @@
     <nav class="topnav">
         <li><a class="logonav">WriteItUp</a></li>
         <ul class="nav" id="navi">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Signin</a></li>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#scroll">About</a></li>
+          <li><a href="#footer">Contact</a></li>
+          <li><a href="login.html">Signin</a></li>
           <a class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
           </a>
@@ -47,21 +47,50 @@
         </div>
     </div>
     <hr>
-      <!---About us section-->
-    <section>
-       <!---shape animation-->
-      <div id="scroll">
+     <!---features section-->
+     <section id="features">
       <!---content-->
-      <h6 id="aboutus">About Us</h6>
-      <div class="slider">
-          <div id="text">
-              <span>WriteItUp is an online storytelling platform, <br>where enthusiastic writers can publish their
+      <div>
+      <div class="slide">
+      <div class="feat-text">
+        <div class="ft" >Get Publish</div>
+        <div class="fd">Show your next big idea to the world.</div></div>
+      <div class="feat-img"><img src="publish.jpeg" class="fm"></div>
+    </div>
+      <div class="slide">
+        <div class="feat-text">
+        <div class="ft" >Lots of stories</div>
+        <div class="fd">Browse for your favourite story from our exquisite collection</div></div>
+      <div class="feat-img"><img src="lots.png" class="fm"></div>
+    </div>
+      <div class="slide">
+        <div class="feat-text">
+        <div class="ft" >Available on go</div>
+        <div class="fd">Get acces to writeups from wide range of devices</div></div>
+      <div class="feat-img"><img src="responsive.png" class="fm"></div>
+    </div>
+      <div class="slide">
+        <div class="feat-text">
+        <div class="ft" >Chat</div>
+        <div class="fd">Interact with people in community.</div></div>
+      <div class="feat-img"><img src="chat.png" class="fm"></div>
+    </div>
+    </div>
+      
+    </section>
+    <hr>
+      <!---About us section-->
+    <section id="scroll">
+        <!---content-->
+        <h6 class="aboutus">About Us</h6>
+        <div class="imagetext">
+          <span class="abouttext">
+              WriteItUp is an online storytelling platform, <br>where enthusiastic writers can publish their
                   work,<br /> and together with the readers, a community is established<br /> where the writers
                   receive honest feedback about their work.</span>
-          </div>
-          
-      </div>
-     
+          <img src="aboutus2.png" width="600" height="600" class="imageabout">
+        
+        <!--<div>
         <ul class="box-area">
           <li></li>
           <li></li>
@@ -69,14 +98,14 @@
           <li></li>
           <li></li>
           <li></li>
-        </ul>
-      </div>
-          
+        </ul></div>
+      </div> -->
+
     </section>
     <hr>
 
     <!---footer-->
-    <footer>
+    <footer id="footer">
         <!---complete section-->
         <div class="main-content">
           <!---left area-->
@@ -112,14 +141,14 @@
           <div class="right box">
             <h2>Need help?</h2>
             <div class="content"></div>
-              <form action="#">
+              <form action="form.php" method="POST">
                 <div class="email">
                   <div class="text">Email *</div>
-                  <input type="email" required>
+                  <input type="email" placeholder="Email" required>
                 </div>
                 <div class="msg">
                   <div class="text">Message *</div>
-                  <textarea rows="3" cols="20" required></textarea>
+                  <textarea rows="3"  placeholder="Message" required></textarea>
                 </div>
                 <!---send button-->
                 <div class="btn">
