@@ -14,15 +14,17 @@
 <body>
     <!---nav bar-->
     <nav class="topnav">
-        <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+        <li><a class="logonav">WriteItUp</a></li>
+        <ul class="nav" id="navi">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Signin</a></li>
+          <a class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
         </ul>
-        <div class="bt">
-            <button class="bt1">Signup</button>
-            <button id="l" class="bt1">Login</button>
-        </div>
     </nav>
       <!---Content for cover page-->
     <div class="container"><br><br>
@@ -45,8 +47,20 @@
     </div>
     <hr>
       <!---About us section-->
-    <section id="scroll">
-        <!---shape animation-->
+    <section>
+       <!---shape animation-->
+      <div id="scroll">
+      <!---content-->
+      <h6 id="aboutus">About Us</h6>
+      <div class="slider">
+          <div id="text">
+              <span>WriteItUp is an online storytelling platform, <br>where enthusiastic writers can publish their
+                  work,<br /> and together with the readers, a community is established<br /> where the writers
+                  receive honest feedback about their work.</span>
+          </div>
+          
+      </div>
+     
         <ul class="box-area">
           <li></li>
           <li></li>
@@ -56,35 +70,7 @@
           <li></li>
         </ul>
       </div>
-          <!---content-->
-        <h6 id="aboutus">About Us</h6>
-        <div class="slider">
-            <div id="text">
-                <span>WriteItUp is an online storytelling platform, <br>where enthusiastic writers can publish their
-                    work,<br /> and together with the readers, a community is established<br /> where the writers
-                    receive honest feedback about their work.</span>
-            </div>
-            <!---slider-->
-            <div class="wrapper" id="slider">
-                <div class="slide">
-                    <img src="1.png">
-                </div>
-                <div class="slide">
-                    <img src="2.png">
-                </div>
-                <div class="slide">
-                    <img src="3.png">
-                </div>
-                <div class="slide">
-                    <img src="4.png">
-                </div>
-                <div class="slide">
-                    <img src="5.png">
-                </div>
-                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
-                <a class="next" onclick="moveSlide(1)">&#10095;</a>
-            </div>
-          </div>
+          
     </section>
     <hr>
 
