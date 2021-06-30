@@ -152,11 +152,14 @@ body::-webkit-scrollbar-thumb {
     font-size: 2rem;
     color:white;
     margin: auto;
-    margin-top: 10rem;}
-.arrow{cursor:pointer;
+    margin-top: 10rem;
+}
+.arrow{
+    cursor:pointer;
     transform: rotate(270deg);
     font-size: 2rem;
     margin-top: 1rem;
+    z-index:1;
     }
 /*animation on arrow*/
 .blinking{
@@ -171,7 +174,8 @@ body::-webkit-scrollbar-thumb {
     100%{   color: white;    }
 }
 /*feature*/
-.slide{display: none;
+.slide{
+    display: none;
     transition:ease-in 5s;
 }
 .fd{color: white;
