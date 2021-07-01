@@ -14,10 +14,13 @@ function carousel() {
   setTimeout(carousel, 4000); // Change image every 4 seconds
 }
 s = document.getElementsByClassName("arrow");
-v = document.getElementsById("scroll");
+v = document.getElementsById("features");
 s.addEventListener("click", dis);
 function dis() {
     v.style.display = "flex";}
+
+
+
 /*let currentSlide = 0;
 function moveSlide(dir) {
     if (dir == 1 && currentSlide == 4) { currentSlide = -1; }
