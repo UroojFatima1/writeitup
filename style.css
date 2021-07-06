@@ -222,10 +222,11 @@ body::-webkit-scrollbar-thumb {
 margin-right: 0rem;}
 /*aboutus heading*/
 .aboutus{
-    font-family: 'Fredericka the Great', cursive;
     font-size: 4rem;
     color:black;
     margin:  4rem ;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: normal;
 }
 /*about us text*/
 .abouttext {margin-left:5rem ;
@@ -320,18 +321,21 @@ hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
     padding: 0;
    
 }
-.ourteam{position: relative;
+.ourteam{
+    position: relative;
     z-index: 2;
     top:3rem;
     bottom:1rem;
     margin:auto;
     font-family: 'Fredericka the Great', cursive;
     font-size: 4rem;
-    color:black;
+    font-weight: normal;
+    color:white;
     margin-bottom: 3.75rem;
     text-align: center;}
 
-.team{padding-left: 5rem;
+.team{
+    padding-left: 5rem;
     padding-right: 5rem;
     display: flex;
     text-align: center;
@@ -442,15 +446,18 @@ footer{background:
     width: 100%;
 }
 /*applies to all content of footer*/
-.main-content{color:white;
-    display: flex;}
+.main-content{
+    color:white;
+    display: flex;
+}
 
 /*applies to both boxes*/
 .main-content .box{margin: 1rem 2rem 2rem 1rem;
     padding: 0.625rem 1.25rem;}
-.box h2{margin-top: 1rem;;
-    font-size: 1.4rem;
-    font-weight: 600;
+.box h2{
+    margin-top: 1rem;;
+    font-size: 1.7rem;
+    font-weight: normal;
     text-transform: uppercase;
     font-family: 'Fredericka the Great', cursive;}  
 
@@ -538,7 +545,7 @@ margin-left:1.7rem;}
 .right form .btn{
     margin-top: 2rem;
   }
-.right form .btn button{margin-left:10.5rem;
+.right form .btn input{margin-left:10.5rem;
     height: 2.5rem;
     width: 60%;
     border: none;
@@ -549,7 +556,7 @@ margin-left:1.7rem;}
     cursor: pointer;
     transition: .3s;
   }
-  .right form .btn button:hover{
+  .right form .btn input:hover{
     background: gray;
   }
 
