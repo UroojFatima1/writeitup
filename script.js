@@ -12,33 +12,20 @@ function carousel() {
   x[slideIndex-1].style.transition="all 2s"
   setTimeout(carousel, 4000); // Change image every 4 seconds
 }
+const ham=document.querySelector('.hamburger');
+const nav=document.querySelector('.nav');
+const links= document.querySelectorAll('.nav li a');
+
+ham.addEventListener("click", ()=> {nav.classList.toggle("open");});
+links.forEach(link => link.addEventListener("click",()=> {nav.classList.remove("open");}));
+
+
+
 s = document.getElementsByClassName("arrow");
-v = document.getElementsById("features");
+v = document.querySelector("#features");
 s.addEventListener("click", dis);
 function dis() {
     v.style.display = "flex";}
 
-var btnContainer = document.getElementById("navi");
-var btns = btnContainer.getElementsByClassName("navbtn");
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace("active", "");
-    this.className += "active";
-  });
-}
-
-
-
-/*let currentSlide = 0;
-function moveSlide(dir) {
-    if (dir == 1 && currentSlide == 4) { currentSlide = -1; }
-    if (dir == -1 && currentSlide == 0) { currentSlide = 5; }
-    currentSlide = currentSlide + dir;
-    const slides = document.querySelectorAll(".slide");
-    console.log(slides);
-    slides.forEach(slide => slide.style.display = "none");
-    slides[currentSlide].style.display = "flex";
-}*/
 
 

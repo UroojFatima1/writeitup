@@ -11,7 +11,7 @@ scroll-behavior: smooth;}
 }
 
 /*nav bar*/
-nav{height: fit-content;
+nav{height:fit-content;
     position: fixed;
     margin:auto;
     width: 100vw;
@@ -19,7 +19,7 @@ nav{height: fit-content;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-    z-index: 10}
+    z-index: 10;}
 
 .topnav{display: flex;
     overflow: hidden;
@@ -64,9 +64,7 @@ ul li a:hover{
     cursor: pointer;
 }
 
-.topnav .icon {
-    display: none;
-  }
+
 
 .active{
     background-color: #666;
@@ -104,50 +102,21 @@ body::-webkit-scrollbar-thumb {
 /*cover page text*/
 .text2 {
     display: flex;
+    flex-direction: row;
     text-align: center;
     justify-content: center;
     align-items: center;
     margin:auto;
-    width: 77rem;
-    height: 7rem;
+    width: 100%;
+    height: 100%;
     overflow: visible;
     white-space: nowrap;
     font-family: 'Josefin Slab', serif;
     font-weight: bold;
     color:white;
-    margin-top: 0.25rem;
-    font-size:2.2rem;
+    margin-top: -1rem;
+    font-size:2.6rem;
 } 
-/*cover pager login signup buttons*/
-/*.button{display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;}
-
-.buttn{margin-top: 3.5rem;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background-color: transparent;
-    font-size: 1.52rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
-    cursor: pointer;
-    border-radius: 4rem;
-    border-width: 0.35rem;
-    border-style: solid;}
-
-.buttn:hover{
-    background-color: whitesmoke;
-    opacity: 80%;
-    color: black;
-}
-
-#b1{padding: 1rem 2rem 1rem 2rem;}
-
-#b2{margin-left: 2.2rem;
-    padding: 1rem 1.5rem 1rem 1.5rem;}*/
 
 /*readmore arrow*/
 .readmore, .arrow{ 
@@ -156,16 +125,16 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     font-family: 'Fredericka the Great', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color:white;
     margin: auto;
-    margin-top: 10rem;
+    margin-top: 4rem;
 }
 .arrow{
     cursor:pointer;
     transform: rotate(270deg);
-    font-size: 2rem;
-    margin-top: 1rem;
+    font-size: 2.5rem;
+    margin-top: 0rem;
     z-index:1;
     }
 /*animation on arrow*/
@@ -183,7 +152,7 @@ body::-webkit-scrollbar-thumb {
 /*feature*/
 .slide{
     display: none;
-    transition:ease-in 5s;
+    transition:ease-in 6s;
 }
 .fd{color: white;
     font-size: 2.8rem;
@@ -210,16 +179,15 @@ body::-webkit-scrollbar-thumb {
     height:100vh;
 }
 .fm{
-    height:100%;
-    width:100%;
+    height:100vh;
+    width:42vw;
 }
 /*about us section*/
 #scroll, #features { width: 100%;
 	height: 100vh;
 }
-.imagetext,.fit{display: flex;}
-.imageabout{margin-top: 1rem;
-margin-right: 0rem;}
+.imagetext,.fit{display: flex;
+}
 /*aboutus heading*/
 .aboutus{
     font-size: 4rem;
@@ -433,14 +401,7 @@ hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
     top:0;
     }
 /*footer texture*/
-footer{background:
-    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-    background-color: #131313;
+footer{background-color: #131313;
     background-size: 1.25rem 1.25rem;
     bottom: 0rem;
     width: 100%;
@@ -570,37 +531,74 @@ margin-left:1.7rem;}
 @media only screen and (max-width:768px){
     html{font-size:45%;
      }
-     
-}
-@media only screen and (max-width:656px){
-    html{font-size:40%;
+    .line{
+        width: 4rem;
+        height: 0.75rem;
+        margin: 0.25rem;
+        background-color: white;}
+
+    .hamburger{position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top:50%;
+    z-index: 11;
+    transform: translate(-5%,-50%);}
+    nav{height:fit-content;
+        position: fixed;
+        margin:auto;
+        width: 100vw;
      }
-    
+
+    .nav{background-color: black;
+        position: fixed;
+        z-index: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        clip-path: circle(0rem at 90% -10%);
+        -webkit-clip-path:circle(0rem at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+      
+    }
+    .nav li a{position: relative;
+        top:500%;
+        right: -40%;
+        font-size: 3rem;}
+
+    .nav.open  {clip-path: circle(150rem at 90% -10%);
+        -webkit-clip-path:circle(150rem at 90% -10%);
+        transition: all 1.25s ease-out;
+        pointer-events: all;}
+
+    .logonav{
+    margin-top: 0.5rem;
+    font-size: 3rem;
+    margin-left: 2rem;
+    font-family: 'Fredericka the Great', cursive;
 }
 
-@media only screen and (max-width:586px){
-    html{font-size:35%;
+    
+}
+@media only screen and (max-width:480px){
+    html{font-size:50%;
      }
     
 }
-@media only screen and (max-width:512px){
-    html{font-size:30%;
-     }
+@media only screen and (max-width:320px){
+    html{font-size:35%;}
+    .logo{height: 30rem;
+        height: 30rem;}
+    .text2{height: 100%;
+    line-height:4rem;
+margin-top: 1.5rem;}
+.readmore .arrow{margin-top: 20rem;}
+
     
-}
-@media only screen and (max-width:442px){
-    html{font-size:25%;
-     }
-}
-@media only screen and (max-width:376px){
-    html{font-size:20%;
-     }
-     
 }
 
 @media screen and (max-width: 900px) {
-  
-
     footer{
       position: relative;
       bottom: 0px;
@@ -612,6 +610,7 @@ margin-left:1.7rem;}
     .main-content .box{
       margin: 5px 0;
     }
-    
+ 
   }
+
 
