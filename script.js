@@ -1,4 +1,3 @@
-
 var slideIndex = 0;
 carousel();
 function carousel() {
@@ -18,6 +17,16 @@ v = document.getElementsById("features");
 s.addEventListener("click", dis);
 function dis() {
     v.style.display = "flex";}
+
+var btnContainer = document.getElementById("navi");
+var btns = btnContainer.getElementsByClassName("navbtn");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace("active", "");
+    this.className += "active";
+  });
+}
 
 
 

@@ -67,6 +67,11 @@ ul li a:hover{
 .topnav .icon {
     display: none;
   }
+
+.active{
+    background-color: #666;
+    color: white;
+}
 /*scroll bar*/
 body::-webkit-scrollbar {
     width: 1rem;
