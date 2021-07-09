@@ -1,6 +1,7 @@
 html{font-size:62.5%;
 scroll-behavior: smooth;}
 
+
 *{margin: 0rem;
     padding: 0rem;
     height: fit-content;
@@ -19,7 +20,7 @@ nav{height:fit-content;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-    z-index: 10;}
+    z-index: 13;}
 
 .topnav{display: flex;
     overflow: hidden;
@@ -31,9 +32,9 @@ nav{height:fit-content;
     list-style: none;
     text-transform: uppercase;
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
     letter-spacing: 0.25rem;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     margin-left: 2rem;
     font-family: 'Fredericka the Great', cursive;
 }
@@ -206,79 +207,6 @@ body::-webkit-scrollbar-thumb {
     color:black;
     line-height: 4rem;}
 
-/*.abouttext::first-letter {
-    font-size: 250%;
-    margin-left: 0rem;
-}*/
-/*animation on about us*/
-
-/*.box-area {
-	position: absolute;
-	top: 55rem;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-.box-area li {
-	position: absolute;
-	display: block;
-	list-style: none;
-	width: 1.563rem;
-	height:1.563rem;
-	background: rgba(255, 255, 255, 0.2);
-	animation: animate 20s linear infinite;
-	bottom: -150px;
-}
-.box-area li:nth-child(1) {
-	left: 86%;
-	width: 5rem;
-	height: 5rem;
-	animation-delay: 0s;
-}
-.box-area li:nth-child(2) {
-	left: 12%;
-	width: 1.875rem;
-	height: 1.875rem;
-	animation-delay: 1.5s;
-	animation-duration: 10s;
-}
-.box-area li:nth-child(3) {
-	left: 70%;
-	width: 6.25rem;
-	height: 6.25rem;
-	animation-delay: 5.5s;
-}
-.box-area li:nth-child(4) {
-	left: 42%;
-	width: 9.375rem;
-	height: 9.375rem;
-	animation-delay: 0s;
-	animation-duration: 15s;
-}
-.box-area li:nth-child(5) {
-	left: 65%;
-	width: 2.5rem;
-	height: 2.5rem;
-	animation-delay: 0s;
-}
-.box-area li:nth-child(6) {
-	left: 15%;
-	width: 6.875rem;
-	height: 6.875rem;
-	animation-delay: 2.5s;
-}
-@keyframes animate {
-	0% {
-		transform: translateY(0) rotate(0deg);
-		opacity: 1;
-	}
-	100% {
-		transform: translateY(-800px) rotate(360deg);
-		opacity: 0;
-	}
-}*/
-
 /*to break sections*/
 hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
 /*about developers*/
@@ -302,12 +230,11 @@ hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
     margin-bottom: 3.75rem;
     text-align: center;}
 
-.team{
-    padding-left: 5rem;
-    padding-right: 5rem;
-    display: flex;
+.team{display: flex;
+    flex-direction: row;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 0rem 5rem;
     position: relative;
     z-index: 0;
     top:0rem;
@@ -338,7 +265,7 @@ hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
  }
 
 .member .hovercard h3{position:relative;
-    top:4rem;
+    top:5rem;
     font-family: 'Josefin Slab', serif;
     font-size: 3rem;
     color:  grey;;
@@ -354,8 +281,6 @@ hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
     font-weight: bold;
     line-height: 3rem;
     z-index:0; 
-      
-    
 }
 .member .hovercard p{position:relative;
     top:5rem;
@@ -524,13 +449,8 @@ margin-left:1.7rem;}
 
 
 /*media queries*/
- @media only screen and (max-width:998px) {
-    html{font-size: 55%;
-        }
-}
-@media only screen and (max-width:768px){
-    html{font-size:45%;
-     }
+
+@media only screen and (max-width:900px) {
     .line{
         width: 4rem;
         height: 0.75rem;
@@ -539,7 +459,7 @@ margin-left:1.7rem;}
 
     .hamburger{position: absolute;
     cursor: pointer;
-    right: 5%;
+    right: 10%;
     top:50%;
     z-index: 11;
     transform: translate(-5%,-50%);}
@@ -551,7 +471,6 @@ margin-left:1.7rem;}
 
     .nav{background-color: black;
         position: fixed;
-        z-index: 0;
         width: 100%;
         height: 100vh;
         display: flex;
@@ -577,40 +496,78 @@ margin-left:1.7rem;}
     font-size: 3rem;
     margin-left: 2rem;
     font-family: 'Fredericka the Great', cursive;
-}
+} 
+.team{flex-direction: column;
+        padding:0rem 0rem;
+        margin-top: 0;
+        height: 105vh;
+        margin-top: 0rem;
+        margin-bottom: 0rem;}
+    .member{margin-top: 0rem;
+        top:0rem;
+        bottom:0rem;
+        height: 33rem;
+        width: 33rem;
+        padding: 0.25 0;}
+    .ourteam{bottom: 1.5rem;
+        margin-bottom: 5.5rem;
+        top:1rem;}
+    #urooj{margin-top: -16rem;}
+    .hovercard{padding: 0.75rem;}
+    .member .hovercard p{top:3rem;
+    font-size: 2.3rem;}
+    .member .hovercard h3{top:2rem;
+    left:3rem;}
+    .teamimg img{
+        width:8rem;
+        height: 8rem;
+    }
+    .teamimg{top:-3rem;
+        width:8rem;
+        height: 8rem;
+    }
+    .cardimg{height: 27rem;
+    width: 27rem;}
+    .member .frontcard h3{top:0.5rem;
+    bottom: 0.25rem;}
+    footer{
+        position: relative;
+        bottom: 0px;
+      }
+      .main-content{
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+      .main-content .box{
+        margin: 5px 0;
+      } 
 
-    
 }
-@media only screen and (max-width:480px){
-    html{font-size:50%;
-     }
+@media only screen and (max-width:1024px) and (min-width:1024px)  { html{font-size: 73%;}
+.ourteam{font-size:6rem ;}
+.team{flex-direction: column;
+top: 3rem;}
+#urooj{margin-top:10rem;}
+}
+@media only screen and (max-width:900px) and (min-width:330px){html{font-size:48%}}
+
+@media only screen and (min-width:768px) and (max-width:768px)
+{
+    html{font-size:70%;}
+    .ourteam{font-size: 6rem; 
+    margin-bottom: 8rem;}
     
 }
 @media only screen and (max-width:320px){
-    html{font-size:35%;}
+    html{font-size:40%;}
+    .ourteam{font-size: 5rem;}
     .logo{height: 30rem;
         height: 30rem;}
     .text2{height: 100%;
     line-height:4rem;
 margin-top: 1.5rem;}
 .readmore .arrow{margin-top: 20rem;}
-
-    
+ 
 }
 
-@media screen and (max-width: 900px) {
-    footer{
-      position: relative;
-      bottom: 0px;
-    }
-    .main-content{
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-    .main-content .box{
-      margin: 5px 0;
-    }
  
-  }
-
-
