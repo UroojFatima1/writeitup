@@ -32,7 +32,7 @@ nav{height:fit-content;
     list-style: none;
     text-transform: uppercase;
     color: white;
-    font-size: 2.6rem;
+    font-size: 2.75rem;
     letter-spacing: 0.25rem;
     padding: 1rem 0;
     margin-left: 2rem;
@@ -54,9 +54,9 @@ ul li a{
     text-transform: uppercase;
     color: white;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     letter-spacing: 0.25rem;
-    padding: 1.75rem;
+    padding: 1.55rem;
     transition: all ease 0.25s;
     font-weight: 600;  
 }
@@ -64,8 +64,6 @@ ul li a:hover{
     background-color:gray;
     cursor: pointer;
 }
-
-
 
 .active{
     background-color: #666;
@@ -151,9 +149,7 @@ body::-webkit-scrollbar-thumb {
     100%{   color: white;    }
 }
 /*feature*/
-#features{display: flex;
-    flex-direction: row ;
-}
+.fit{display: flex;}
 .slide{
     display: none;
     transition:6s;
@@ -169,7 +165,6 @@ body::-webkit-scrollbar-thumb {
     margin-top:20rem;
     font-family: 'Fredericka the Great', cursive;
 }
-.fm{margin:3rem 1rem;}
 .feat-text{flex-basis:48%;
     background-image: linear-gradient(-45deg, #299be7,#176ca5);
     width:50%;
@@ -183,45 +178,38 @@ body::-webkit-scrollbar-thumb {
     width:50%;
     float:right;
     height:100vh;
-  
 }
+
 
 /*about us section*/
-#scroll, #features { width: 100%;
-	height: 100vh;
-}
-.fit{display: flex;}
-.row {
-  display: flex;
-}
-
-.column {
-  flex: 50%;
-}
-
+.row {display: flex;}
+.column{flex: 50%;}
+.au{width: 100%;
+	height: 100%;}
 /*aboutus heading*/
-.aboutus{
-    font-size: 4rem;
+.aboutus{margin-top: 10rem;
+    font-size: 6rem;
     color:black;
-    margin:  4rem ;
+    margin-left: 4rem;
     font-family: 'Fredericka the Great', cursive;
     font-weight: normal;
+    margin-bottom: 3rem;
 }
 /*about us text*/
-.abouttext {flex-basis:60%;
+.abouttext {position:relative;
     margin:auto;
-    margin-left:10rem ;
-    margin-top:10rem;
+    left:5rem ;
+    top:3rem;
     font-family: 'Josefin Slab', serif;
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: 3rem;
     color:black;
-    line-height: 4rem;}
+    line-height: 6rem;}
 
-.ia{margin-top:5rem;
+.ia{margin:auto;
+    margin-top:5rem;
     margin-bottom: 5rem;
-    flex-basis:40%;
-    height:80vh;
+    height:30%;
     width:100%;}
 
 /*to break sections*/
@@ -232,7 +220,7 @@ hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
     width: 100%;
     height: 100vh;
     padding: 0;
-   
+
 }
 .ourteam{
     position: relative;
@@ -241,7 +229,7 @@ hr{height: 0.5rem;;border-width:0;color:gray;background-color:gray;}
     bottom:1rem;
     margin:auto;
     font-family: 'Fredericka the Great', cursive;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: normal;
     color:white;
     margin-bottom: 3.75rem;
@@ -586,3 +574,6 @@ margin-top: 1.5rem;}
 .readmore .arrow{margin-top: 20rem;}
  
 }
+@media only screen and (max-width:1148px) {
+    .row{flex-direction: column;}
+ .fit{flex-direction: column;}}
