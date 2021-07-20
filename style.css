@@ -117,6 +117,7 @@ body::-webkit-scrollbar-thumb {
     color:white;
     margin-top: -2rem;
     font-size:2.6rem;
+    word-wrap: break-word;
 } 
 
 /*readmore arrow*/
@@ -581,8 +582,9 @@ font-size: 4rem;}
         height: 30rem;}
     .text2{height: 100%;
     line-height:4rem;
-margin-top: 1.5rem;}
+margin-top: -1rem;}
 .readmore .arrow{margin-top: 20rem;}
+
  
 }
 @media only screen and (max-width:1148px) and (min-width:1100px){
