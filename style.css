@@ -117,7 +117,7 @@ body::-webkit-scrollbar-thumb {
     color:white;
     margin-top: -2rem;
     font-size:2.6rem;
-    word-wrap: break-word;
+  
 } 
 
 /*readmore arrow*/
@@ -551,7 +551,8 @@ margin-left:1.7rem;}
       .main-content .box{
         margin: 5px 0;
       } 
-
+      .column{flex: 50%;}
+      .row{flex-direction:column;}}
 }
 @media only screen and (max-width:1024px) and (min-width:1024px)  { html{font-size: 73%;}
 .ourteam{font-size:6rem ;}
@@ -566,7 +567,8 @@ font-size: 4rem;}
 .arrow{font-size: 5rem;}
 }
 @media only screen and (max-width:900px) and (min-width:330px){html{font-size:50%}
-.team{margin-top:4rem;}}
+.team{margin-top:4rem;}
+}
 
 @media only screen and (min-width:768px) and (max-width:768px)
 {
@@ -582,8 +584,9 @@ font-size: 4rem;}
         height: 30rem;}
     .text2{height: 100%;
     line-height:4rem;
-margin-top: -1rem;}
-.readmore .arrow{margin-top: 20rem;}
+    margin-top: -1rem;}
+    .readmore .arrow{margin-top: 20rem;}
+
 
  
 }
@@ -597,8 +600,6 @@ margin-top: -1rem;}
  .arrow{font-size: 5rem;}
 .logo{width:40rem;
 height: 40rem;;}}
-
-
 
 
 @media only screen and (max-width:400px) and (max-height:700px){#covertext{font-size: 3rem;}
