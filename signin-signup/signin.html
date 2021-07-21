@@ -22,17 +22,17 @@
     <div class="container">
         <div class="forms-container">
             <div class="sign-in-sign-up">
-                <form action="signin_form.php" method="post" class="signin-form">
+                <form action="signin_form.php" method="post" class="signin-form" name="login">
                     <h2 class="form-title">Sign In</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username">
+                        <input type="text" placeholder="Username" name="si_username">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="password" placeholder="Password" name="si_password">
                     </div>
-                    <input type="submit" class="btn" value="Login">
+                    <input type="submit" class="btn" value="Login" name="login">
                     <p class="social-text">Or Sign in using social platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -40,29 +40,29 @@
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                     </div>
                 </form>
-                <form action="signup_form.php" method="post" class="signup-form">
+                <form action="signup_form.php" method="post" class="signup-form" name="register">
                     <h2 class="form-title">Sign Up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" name="username">
+                        <input type="text" placeholder="Username" name="su_username">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email">
+                        <input type="email" placeholder="Email" name="su_email">
                     </div>
                     <div class="input-field">
                         <i></i>
-                        <input type="date" name="dob">
+                        <input type="date" name="su_dob">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="password" placeholder="Password" name="su_password">
                     </div>
                     <div class="input-field">
                         <i class="fas fa-upload"></i>
-                        <input type="file" accept=".jpg,.png,.jpeg" name="dp">
+                        <input type="file" accept=".jpg,.png,.jpeg" name="su_dp">
                     </div>
-                    <input type="submit" class="btn" value="Register">
+                    <input type="submit" class="btn" value="Register" name="register">
                     <p class="social-text">Or Sign up using social platforms</p>
                     <div class="social-media">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
