@@ -1,0 +1,127 @@
+html{font-size:62.5%;
+scroll-behavior: smooth;
+overflow-x: hidden;
+}
+
+
+*{margin: 0rem;
+    padding: 0rem;
+    height: fit-content;
+    max-width: auto;
+    opacity: 100%;
+    font-family: 'Josefin Slab', serif;
+    box-sizing: border-box;
+}
+.heading{display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 2rem;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 4rem;
+    font-weight: normal;
+    color:black;}
+.plus{position:relative;
+    display:flex;
+    font-size: 12rem;
+    color: grey;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-top:5rem ;}
+.rectangle {position:relative;
+    margin-top: 2rem;
+  height: 260px;
+  width: 180px;
+  border: 3px solid rgb(133, 125, 125);
+  background-color: rgba(233, 231, 231, 0.774);
+  margin-left: 12rem;
+  margin-right: 10rem;
+  justify-content: left;
+  align-items: left;
+  flex-basis: 25%;
+  z-index:1;
+}
+input[type="file"]{display: none;}
+.rectangle span{
+    display:flex;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: grey;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-top: -1rem;
+  }
+.write{display: flex;
+    margin-top: 5rem;
+}
+.form{justify-content: right;
+    align-items: right;
+    flex-basis: 75%;
+    margin-right: 5rem;
+    margin-left: 4rem;
+}
+.input-field{font-family: 'Josefin Slab', serif;
+    max-width:500px;
+    background-color: #f0f0f0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    margin:1rem 0;
+}
+.input-field i{
+    text-align: center;
+    line-height: 55px;
+    font-size: 1.5rem;
+}
+.input-field input, .input-field select,.input-field textarea{margin-top: 2rem;
+    background: none;
+    outline: none;
+    border:none;
+    line-height: 1;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color:#333;
+    font-family: 'Josefin Slab', serif;
+}
+.input-field select option,.input-field select {font-family: 'Josefin Slab', serif;
+    overflow: hidden;
+    white-space: nowrap;
+    width:110px;}
+.input-field:placeholder-shown{margin-top: 3rem;
+    color:#acacac;
+    font-weight: 500;
+    font-family: 'Josefin Slab', serif;
+}
+.input-field textarea{width: 100%;
+max-width: 95%;}
+.btn{
+    width:150px;
+    height:50px;
+    background-color: #299be7;
+    border-radius: 55px;
+    border:none;
+    outline:none;
+    font-size: 1.2rem;
+    margin-top:1rem;
+    color:white;
+    text-transform: uppercase;
+    font-family: 'Fredericka the Great', cursive;
+    transition:all 0.5s;
+    margin-left: 4rem;
+}
+.btncontainer{display: inline-block;
+margin-left: 4rem;
+margin-top: 1.5rem;}
+.btn:hover{
+    background-color: #176ca5;
+    cursor: pointer;
+}
