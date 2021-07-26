@@ -17,23 +17,26 @@
     <title>writer</title>
 </head>
 <body>
-    <h1 class="heading">Start Writing..!!</h1>
-    <div class="write">
-    <div class="rectangle"><label class="plus" for="fileinput">&plus;</label><input type="file" accept=".jpg,.png,.jpeg" name="cover" id="fileinput"> <span>Add Cover</span> </div>
-    
-    <div class="form">
-        <form action="" method="POST">
+    <div class="container">
+        <div class="forms-container">
+            <h1 class="heading">Start Writing..!!</h1>
+<form action="reader.php" method="POST">
+        <div class="write">
+            <div class="rect">
+            <div class="rectangle"><img id="output"><div id="plustext"><label id="plus" for="fileinput">&plus;</label><input type="file" accept=".jpg,.png,.jpeg" name="cover" id="fileinput"> <span>Add Cover</span></div></div>
+            <div class="clearbtn" id="clearb"><button class="clear">Clear</button></div></div>
+            <div class="form">
                 <div class="input-field">
                     <i class="fa fa-book"></i>
-                    <input type="text"  name="title" placeholder=" Story Title" required>
+                    <input type="text"  name="title" placeholder="Story Title" class="inp" required>
                 </div>
                 <div class="input-field">
-                    <i class="fa fa-sticky-note"></i>
-                    <input type="text"  name="description" placeholder="Story Description" required>
+                    <i class="fa fa-edit"></i>
+                    <textarea type="text"  name="description" placeholder="Story Description" class="inp" row="3" required></textarea>
                 </div>
                 <div class="input-field">
                     <i class="fa fa-server"></i>
-                    <select required>
+                    <select required class="inp">
                         <option>Select a genre</option>
                         <option>Action</option>
                         <option>Comedy</option>
@@ -47,16 +50,24 @@
                     </select>
                 </div>
                 <div class="input-field">
-                    <i class="fa fa-edit"></i>
-                    <textarea name="story" placeholder="Story" rows="3"></textarea>
+                    <i class="fa fa-child"></i>
+                    <div>
+                    <label class="rate" class="inp">Ratings:</label>
+                    <label for="youngadult" class="radiobutton">Young Adult</label>
+                    <input type="radio"  placeholder="Story" id="youngadult" name="Rating"> 
+                    <label for="adult" class="radiobutton">Mature</label>
+                    <input type="radio"  placeholder="Story" id="adult" name="Rating"> 
+                    
+                </div>
                 </div>
                 <div class="btncontainer">
-                    <button class="btn"> Publish</button>
-                    <button class="btn">Save as Draft</button>
+                    <button class="btn"> Proceed</button>
                 </div>
+            </div></div>
         </form>
     </div>
     </div>
+    <script src="writer.js"></script>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 html{font-size:62.5%;
 scroll-behavior: smooth;
 overflow-x: hidden;
+font-family: 'Josefin Slab', serif;
 }
 
 
@@ -12,7 +13,28 @@ overflow-x: hidden;
     font-family: 'Josefin Slab', serif;
     box-sizing: border-box;
 }
-.heading{display: flex;
+.container{
+    position: relative;
+    width:100%;
+    background-color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.container::before{
+    content:'';
+    position:absolute;
+    width:1200px;
+    height:1300px;
+    top:0%;
+    right:48%;
+    background-image: linear-gradient(-20deg, #288fd3,#1367a0);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: 1.8s ease-in-out;
+    z-index:0;
+}
+.heading{position:relative;
+    display: flex;
     justify-content: center;
     justify-items: center;
     align-items: center;
@@ -22,10 +44,11 @@ overflow-x: hidden;
     font-family: 'Fredericka the Great', cursive;
     font-size: 4rem;
     font-weight: normal;
-    color:black;}
-.plus{position:relative;
+    color:black;
+    z-index: 3;}
+#plus{position:relative;
     display:flex;
-    font-size: 12rem;
+    font-size: 15rem;
     color: grey;
     justify-content: center;
     justify-items: center;
@@ -33,25 +56,33 @@ overflow-x: hidden;
     text-align: center;
     margin: auto;
     margin-top:5rem ;}
-.rectangle {position:relative;
-    margin-top: 2rem;
-  height: 260px;
-  width: 180px;
+.rect{ flex-basis: 50%;
+margin-left: 2rem;}
+.rectangle {position:absolute;
+    margin-top: 1rem;
+  height: 300px;
+  width: 260px;
   border: 3px solid rgb(133, 125, 125);
   background-color: rgba(233, 231, 231, 0.774);
-  margin-left: 12rem;
+  margin-left: 15rem;
   margin-right: 10rem;
   justify-content: left;
   align-items: left;
-  flex-basis: 25%;
   z-index:1;
 }
+#output{display:none;
+    position:relative;
+    height: 300px;
+    width: 260px;
+    justify-content: left;
+    align-items: left;
+    z-index:2;}
 input[type="file"]{display: none;}
 .rectangle span{
     display:flex;
     font-family: 'Josefin Slab', serif;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: grey;
     justify-content: center;
     justify-items: center;
@@ -65,9 +96,11 @@ input[type="file"]{display: none;}
 }
 .form{justify-content: right;
     align-items: right;
-    flex-basis: 75%;
+    flex-basis: 50%;
     margin-right: 5rem;
-    margin-left: 4rem;
+    margin-left:7rem;
+    z-index: 3;
+    margin-top: 2rem;
 }
 .input-field{font-family: 'Josefin Slab', serif;
     max-width:500px;
@@ -82,29 +115,30 @@ input[type="file"]{display: none;}
     line-height: 55px;
     font-size: 1.5rem;
 }
-.input-field input, .input-field select,.input-field textarea{margin-top: 2rem;
+.input-field input, .input-field select,.input-field textarea,.input-field label{margin-top: 2rem;
     background: none;
     outline: none;
     border:none;
     line-height: 1;
-    font-weight: bold;
     font-size: 1.5rem;
-    color:#333;
-    font-family: 'Josefin Slab', serif;
+    color:black;
 }
-.input-field select option,.input-field select {font-family: 'Josefin Slab', serif;
+.input-field select option,.input-field select {
     overflow: hidden;
     white-space: nowrap;
     width:110px;}
 .input-field:placeholder-shown{margin-top: 3rem;
-    color:#acacac;
-    font-weight: 500;
-    font-family: 'Josefin Slab', serif;
-}
+    color:#acacac;}
 .input-field textarea{width: 100%;
 max-width: 95%;}
-.btn{
-    width:150px;
+.radiobutton{
+    display: inline-block;
+    padding-left: 0rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+padding-left: 3rem;}
+  
+.btn,.clear{width:150px;
     height:50px;
     background-color: #299be7;
     border-radius: 55px;
@@ -115,13 +149,27 @@ max-width: 95%;}
     color:white;
     text-transform: uppercase;
     font-family: 'Fredericka the Great', cursive;
-    transition:all 0.5s;
-    margin-left: 4rem;
-}
-.btncontainer{display: inline-block;
-margin-left: 4rem;
-margin-top: 1.5rem;}
-.btn:hover{
-    background-color: #176ca5;
-    cursor: pointer;
-}
+    transition:all 0.5s;}
+.btncontainer{display: flex;
+justify-content: center;
+margin-right: 5rem;
+margin-top:2rem;}
+.btn:hover,.clear:hover{background-color: #176ca5;
+    cursor: pointer;}
+.clear{background-color:rgba(233, 231, 231, 0.774);
+    border-radius: 55px;
+    border:none;
+    outline:none;
+    font-size: 1.5rem;
+    margin-top:1rem;
+    color:black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Fredericka the Great', cursive;
+    transition:all 0.5s;}
+
+.clearbtn{display:none;
+    position:relative;
+    justify-content: center;
+    top:31.5rem;
+    z-index: 3;}
