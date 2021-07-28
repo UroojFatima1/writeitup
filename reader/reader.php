@@ -34,7 +34,44 @@ session_start();
         </ul>
     </nav>
     <main>
-        <p style="font-size:25px">Hello <?php echo $_SESSION["si_username"]; ?></p>
+    <h2>Welcome, <?php echo $_SESSION["si_username"]; ?></h2>
+    <!--Suggested Stories-->
+        <div class="row">
+        <h2>Suggested For You</h2>
+           <div class="row-posters">
+               <img class="poster" src="../images/1.png" alt="book"/>
+               <img class="poster" src="../images/2.png" alt="book"/>
+               <img class="poster" src="../images/3.png" alt="book"/>
+               <img class="poster" src="../images/4.png" alt="book"/>
+               <img class="poster" src="../images/5.png" alt="book"/>
+               <img class="poster" src="../images/1.png" alt="book"/>
+               <img class="poster" src="../images/2.png" alt="book"/>
+               <img class="poster" src="../images/3.png" alt="book"/>
+               <img class="poster" src="../images/4.png" alt="book"/>
+               <img class="poster" src="../images/5.png" alt="book"/>
+               <img class="poster" src="../images/1.png" alt="book"/>
+               <img class="poster" src="../images/2.png" alt="book"/>
+               <img class="poster" src="../images/3.png" alt="book"/>
+               <img class="poster" src="../images/4.png" alt="book"/>
+               <img class="poster" src="../images/5.png" alt="book"/>
+           </div>
+        </div>
+        <!--Trending-->
+        <div class="row">
+        <h2>Trending</h2>
+           <div class="row-posters trending">
+               <img class="poster" src="../images/2.png" alt="book"/>
+           </div>
+        </div>
+        <!--Continue Reading-->
+        <div class="row">
+        <h2>Continue Reading</h2>
+           <div class="row-posters">
+               <img class="poster" src="../images/5.png" alt="book"/>
+               <img class="poster" src="../images/4.png" alt="book"/>
+               <img class="poster" src="../images/3.png" alt="book"/>
+           </div>
+        </div>
     </main>
     <footer>
         <div class="footer-logo">
@@ -49,9 +86,9 @@ session_start();
             <li><a href="../index.html#footer" class="navbtn">Contact</a></li>
         </ul>
         <ul class="footer-icons">
-            <a href="mailto:someone@example.com"><i class="fas fa-envelope f"></i></a>
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f f"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram f"></i></a>
+            <a href="mailto:someone@example.com" target="_blank"><i class="fas fa-envelope f"></i></a>
+            <a href="https://www.facebook.com/writeitup" target="_blank"><i class="fab fa-facebook-f f"></i></a>
+            <a href="https://www.instagram.com/writeitup" target="_blank"><i class="fab fa-instagram f"></i></a>
         </ul>
         </div>
     </footer>
