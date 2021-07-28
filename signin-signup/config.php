@@ -1,5 +1,5 @@
 <?php
-    $servername = "localhost";
+    $servername = "localhost:3307";
     $username = "root";
     $password ="";
     $dbname="writeitup";
@@ -13,7 +13,7 @@
     else{echo "Error creating db: ".$conn->error;}*/
     /*$sql = "CREATE TABLE users (
         username VARCHAR(20) PRIMARY KEY,
-        password VARCHAR(50) NOT NULL,
+        pass VARCHAR(50) NOT NULL,
         email VARCHAR(50) NOT NULL,
         dob DATE NOT NULL,
         dp LONGLOB

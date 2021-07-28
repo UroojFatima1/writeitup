@@ -18,7 +18,7 @@ if (isset($_POST["register"])) {
         window.location.href='signin.html';
         </script>");
     } else {
-        $insert_q = "INSERT INTO users (username,email,dob,password,dp) VALUES ('$username','$email','$dob','$pass','$dp');";
+        $insert_q = "INSERT INTO users (username,email,dob,pass,dp) VALUES ('$username','$email','$dob','$pass','$dp');";
         $insertion = mysqli_query($conn, $insert_q);
         if ($insertion){
             echo ("<script>alert(\"User registered successfully.\")</script>");

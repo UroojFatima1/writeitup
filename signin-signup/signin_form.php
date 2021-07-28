@@ -7,10 +7,11 @@ if(isset($_SESSION['si_username'])){
 if(isset($_POST["login"])){
     $s_username=mysqli_real_escape_string($conn,$_POST["si_username"]);
     $s_password=mysqli_real_escape_string($conn,md5($_POST["si_password"]));
-    $check_user=mysqli_query($conn,"SELECT username from users where username='$s_username' AND pass='$s_password'");
-    if(mysqli_num_rows($check_user)>0){
-        $row=mysqli_fetch_assoc($check_user);
+    $user=mysqli_query($conn,"SELECT username,dp from users where username='$s_username' AND pass='$s_password'");
+    if(mysqli_num_rows($user)>0){
+        $row=mysqli_fetch_assoc($user);
         $_SESSION['si_username']=$row['username'];
+        $_SESSION['dp']=$row['dp'];
         echo "<script>window.location.href='../reader/reader.php';</script>";
     }
     else{

@@ -35,7 +35,6 @@ transition: all 2s linear;}
     display: inline-block;
     margin-top: 0.25rem;
     list-style: none;
-    text-transform: uppercase;
     color: white;
     font-size: 2.5rem;
     letter-spacing: 0.25rem;
@@ -61,7 +60,8 @@ ul li a{
     letter-spacing: 0.25rem;
     padding: 1.55rem;
     transition: all ease 0.25s;
-    font-weight: 600;  }
+    font-weight: 600;  
+}
 ul li a:hover{
     background-color:gray;
     cursor: pointer;
