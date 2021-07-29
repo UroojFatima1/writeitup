@@ -8,6 +8,8 @@
 .form-title{
     font-family: 'Fredericka the Great', cursive;
     font-weight:normal;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 .container{
     position: relative;
@@ -23,7 +25,7 @@
     height:2700px;
     top:0%;
     right:48%;
-    background-image: linear-gradient(-45deg, #288fd3,#1367a0);
+    background-color:#3F5870;
     transform: translateY(-50%);
     border-radius: 50%;
     transition: 1.8s ease-in-out;
@@ -46,11 +48,6 @@ form{
     grid-column: 1/2; /*start at 1 and stop at 2*/
     grid-row: 1/2;
     transition:0.2s 0.7s ease-in-out;
-}
-.form-title{
-    font-size: 3rem;
-    color:#444;
-    margin-bottom: 1rem;
 }
 .input-field{
     position: relative;
@@ -108,7 +105,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover{
 .btn{
     width:150px;
     height:50px;
-    background-color: #299be7;
+    background-color:#3F5870;
     border-radius: 55px;
     border:none;
     outline:none;
@@ -120,7 +117,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover{
     transition:all 0.5s;
 }
 .btn:hover{
-    background-color: #176ca5;
+    background-color:#35495c;
     cursor: pointer;
 }
 .social-text{
@@ -147,8 +144,8 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover{
     text-decoration: none;
 }
 .social-icon:hover{
-    color:#299be7;
-    border-color:#299be7;
+    color:#3F5870;
+    border-color:#35495c;
 }
 .sign-in-sign-up{
     position: absolute;

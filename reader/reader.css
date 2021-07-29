@@ -2,13 +2,12 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 * {
   font-family: "Josefin Slab", serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-
 }
 body{
   background-color: rgb(233, 233, 236);
@@ -26,7 +25,6 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-
 /*Nav Bar*/
 nav {
   height: fit-content;
@@ -171,13 +169,38 @@ ul li a:hover{
   display: none;
 }
 .poster{
+  position: relative;
   width:18rem;
   max-height:23rem;
   object-fit: contain;
   padding:1rem;
   transition: transform 450ms;
+  cursor: pointer;
 }
-.poster:hover{
+.poster-overlay{
+  position: absolute;
+  text-align: center;
+  object-fit: contain;
+  margin: 1rem;
+  padding:1rem;
+  width:12rem;
+  height:21rem;
+  color:white;
+  background: rgba(0,0,0,0.6);
+  object-fit: contain;
+  padding:1rem;
+  transition: transform 450ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+}
+.poster-overlay:hover{
+  opacity: 1;
+}
+.poster:hover,.poster-overlay:hover{
   transform: scale(1.08);
 }
 h2{
@@ -196,9 +219,19 @@ font-weight:bold;
   color:white;
   font-weight: bolder;
 }
+
+
+
+
+
+
+
+
+
+
+
 /*Footer*/
 footer{
-<<<<<<< HEAD
   background-color: black;
   color:white;
   display: flex;
@@ -208,25 +241,25 @@ footer{
   width:100%;
   bottom:0;
   z-index:1;
-=======
-    background-color: black;
-    color:white;
-    display: flex;
-    padding:0rem 3rem;
-    flex-direction:row;
-    justify-content: space-between;
-    width:100%;
-    bottom:0;
->>>>>>> f5e296549768af25747248775d0f22d9a27df4b6
 }
 .footer-links{
   display: flex;
   flex-direction:row;
   margin:3rem;
 }
-.footer-logo,.footer-nav{
-<<<<<<< HEAD
+.footer-logo{
   justify-content: left;
+  display: inline-block;
+  margin-top: 0.25rem;
+  list-style: none;
+  color: white;
+  font-size: 2.7rem;
+  letter-spacing: 0.25rem;
+  padding: 1rem 0;
+  font-family: "Fredericka the Great", cursive;
+  text-decoration: none;
+}
+.footer-logo,.footer-nav{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -235,19 +268,7 @@ footer{
 }
 .footer-logo p{
   font-size: 1.3rem;
-  
-=======
-    justify-content: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left:1rem;
-}
-.footer-logo p{
-    font-size: 1.3rem;
-    
->>>>>>> f5e296549768af25747248775d0f22d9a27df4b6
+  font-weight: bold;
 }
 .footer-nav{
   list-style: none;
@@ -297,35 +318,6 @@ vertical-align: middle;
   color:white;
   text-decoration: none;
 }
-<<<<<<< HEAD
-=======
-.row{
-  margin:2rem;
-}
-.row-posters{
-  display:flex;
-  justify-content: flex-start;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  padding:1.5rem;
-  border:2px darkblue dashed;
-  border-radius: 30px;
-  margin:.5rem 1.5rem;
-}
-.row-posters::-webkit-scrollbar{
-  display: none;
-}
-.poster{
-  width:18rem;
-  max-height:23rem;
-  object-fit: contain;
-  padding:1rem;
-  transition: transform 450ms;
-}
-.poster:hover{
-  transform: scale(1.08);
-}
->>>>>>> f5e296549768af25747248775d0f22d9a27df4b6
 @media only screen and (max-width: 900px) {
     ul li a span{
         display: none;

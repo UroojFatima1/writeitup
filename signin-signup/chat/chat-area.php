@@ -74,11 +74,11 @@ if(!isset($_SESSION['si_username'])){
             </div>
         </div>
     </div>
-    <form action="#" class="typing-area" mthod="POST">
+    <form action="#" class="typing-area">
         <input type="text" class="outgoing_id" name="outgoing_id" value="<?php echo $_SESSION['si_username']; ?>" hidden>   
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
         <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
-        <button><i class="fab fa-telegram-plane"></i></button>
+        <button><i class="button fab fa-telegram-plane"></i></button>
     </form>
         
     </section>

@@ -19,7 +19,7 @@
  
 
     
-    else{echo("<script>alert(\"kya.\")</script>");}
+    else{echo("<script>alert(\"unsuccessful.\")</script>");}
    
     
     
