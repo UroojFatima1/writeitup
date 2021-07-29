@@ -8,18 +8,18 @@ html {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background-color: rgb(233, 233, 236);
 }
 /*Scroll bar*/
 body::-webkit-scrollbar {
   width: 1rem;
 }
- 
+
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
@@ -35,7 +35,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  z-index:1;
+  z-index: 1;
 }
 .topnav {
   display: flex;
@@ -51,7 +51,6 @@ nav {
   letter-spacing: 0.25rem;
   padding: 1rem 0;
   margin-left: 1rem;
-  margin-right:14rem;
   font-family: "Fredericka the Great", cursive;
   text-decoration: none;
 }
@@ -68,7 +67,7 @@ nav {
   display: inline-flex;
   align-items: center;
 }
-ul li a{
+ul li a {
   text-decoration: none;
   text-transform: uppercase;
   color: white;
@@ -80,11 +79,11 @@ ul li a{
   transition: all ease 0.25s;
   font-weight: 600;
 }
-ul li a span{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+ul li a span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-ul li a:hover{
+ul li a:hover {
   background-color: gray;
   cursor: pointer;
 }
@@ -92,13 +91,15 @@ ul li a:hover{
   width: 50px;
   height: 50px;
   margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 .search-box {
-  padding:0;
+  padding: 0;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  margin-left: 14rem;
   border: rgb(83, 81, 81) 1px solid;
 }
 .search-box input {
@@ -112,13 +113,13 @@ ul li a:hover{
 }
 .search-box i {
   font-size: 2rem;
-  color:white;
+  color: white;
   margin-right: 1rem;
   text-align: center;
   align-items: center;
 }
-.search-r{
-    display: none;
+.search-r {
+  display: none;
 }
 /*Main Body*/
 .spikes {
@@ -131,7 +132,7 @@ ul li a:hover{
   align-items: center;
 }
 .spikes::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   left: -0%;
@@ -140,54 +141,55 @@ ul li a:hover{
   display: block;
   height: 50px;
   background-size: 50px 100%;
-  background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);
+  background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%),
+    linear-gradient(225deg, #2c3e50 25%, transparent 25%);
   background-position: 0 0;
 }
-.welcome{
+.welcome {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #ffffff;
 }
-.row{
-  margin:2rem;
+.row {
+  margin: 2rem;
 }
-.row-posters{
-  display:flex;
+.row-posters {
+  display: flex;
   justify-content: flex-start;
   overflow-x: scroll;
   overflow-y: hidden;
-  padding:1.5rem;
-  border:4px white dashed;
+  padding: 1.5rem;
+  border: 4px white dashed;
   border-radius: 30px;
-  margin:.5rem 1.5rem;
+  margin: 0.5rem 1.5rem;
   background: #3f5870;
 }
-.row-posters::-webkit-scrollbar{
+.row-posters::-webkit-scrollbar {
   display: none;
 }
-.poster{
+.poster {
   position: relative;
-  width:18rem;
-  max-height:23rem;
+  width: 18rem;
+  max-height: 23rem;
   object-fit: contain;
-  padding:1rem;
+  padding: 1rem;
   transition: transform 450ms;
   cursor: pointer;
 }
-.poster-overlay{
+.poster-overlay {
   position: absolute;
   text-align: center;
   object-fit: contain;
   margin: 1rem;
-  padding:1rem;
-  width:12rem;
-  height:21rem;
-  color:white;
-  background: rgba(0,0,0,0.6);
+  padding: 1rem;
+  width: 12rem;
+  height: 21rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
   object-fit: contain;
-  padding:1rem;
+  padding: 1rem;
   transition: transform 450ms;
   display: flex;
   flex-direction: column;
@@ -196,46 +198,47 @@ ul li a:hover{
   cursor: pointer;
   opacity: 0;
 }
-.poster-overlay:hover{
+.poster-overlay:hover {
   opacity: 1;
 }
-.poster:hover,.poster-overlay:hover{
+.poster:hover,
+.poster-overlay:hover {
   transform: scale(1.08);
 }
-h2{
-font-family: "Fredericka the Great", cursive;
-padding-left:3rem;
-font-size: 3rem;
-font-weight:bold;
+h2 {
+  font-family: "Fredericka the Great", cursive;
+  padding-left: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
 }
-.trending{
+.trending {
   justify-content: center;
 }
-.details{
-  margin:2rem;
-  padding:4rem;
+.details {
+  margin: 2rem;
+  padding: 4rem;
   font-size: 2.5rem;
-  color:white;
+  color: white;
   font-weight: bolder;
 }
 /*Footer*/
-footer{
+footer {
   background-color: black;
-  color:white;
+  color: white;
   display: flex;
-  padding:0rem 3rem;
-  flex-direction:row;
+  padding: 0rem 3rem;
+  flex-direction: row;
   justify-content: space-around;
-  width:100%;
-  bottom:0;
-  z-index:1;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
 }
-.footer-links{
+.footer-links {
   display: flex;
-  flex-direction:row;
-  margin:3rem;
+  flex-direction: row;
+  margin: 3rem;
 }
-.footer-logo{
+.footer-logo {
   justify-content: left;
   display: inline-block;
   margin-top: 0.25rem;
@@ -247,79 +250,80 @@ footer{
   font-family: "Fredericka the Great", cursive;
   text-decoration: none;
 }
-.footer-logo{
-  margin-right:2rem;
+.footer-logo {
+  margin-right: 2rem;
 }
-.footer-logo,.footer-nav{
+.footer-logo,
+.footer-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left:1rem;
+  margin-left: 1rem;
 }
-.footer-logo p{
+.footer-logo p {
   font-size: 1.3rem;
   font-weight: bold;
 }
-.footer-nav{
+.footer-nav {
   list-style: none;
-  margin-right:4rem;
+  margin-right: 4rem;
 }
-.footer-nav li{
-  margin:0.75rem;
+.footer-nav li {
+  margin: 0.75rem;
 }
-.footer-nav li a:hover{
-  background-color:black;
+.footer-nav li a:hover {
+  background-color: black;
 }
-.footer-icons{
+.footer-icons {
   display: flex;
   flex-direction: column;
 }
-.footer-icons i{
-  background-color:  #33383b;
-color: #ffffff;
-font-size: 2rem;
-width: 38px;
-height: 38px;
-border-radius: 50%;
-text-align: center;
-line-height: 42px;
-  margin:0.5rem;
-vertical-align: middle;
+.footer-icons i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 2rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 0.5rem;
+  vertical-align: middle;
 }
-.footer-icons i:hover{
-  color:  #33383b;
+.footer-icons i:hover {
+  color: #33383b;
   background-color: white;
 }
-.write{
+.write {
   display: flex;
   align-items: center;
   justify-content: center;
-  border:2px dashed white;
-  margin:3rem;
-  padding:3rem 7rem;
-  border-radius:50px;
+  border: 2px dashed white;
+  margin: 3rem;
+  padding: 3rem 7rem;
+  border-radius: 50px;
   text-align: center;
 }
-.write p{
+.write p {
   font-size: 2.3rem;
   line-height: 1.5;
 }
-.footer-link{
-  color:white;
+.footer-link {
+  color: white;
   text-decoration: none;
 }
 @media only screen and (max-width: 900px) {
-    ul li a span{
-        display: none;
-    }
-    .search-box{
-        display: none;
-    }
-    .search-r{
-        display: block;
-    }
-    .write{
-      display: none;
-    }
+  ul li a span {
+    display: none;
+  }
+  .search-box {
+    display: none;
+  }
+  .search-r {
+    display: block;
+  }
+  .write {
+    display: none;
+  }
 }
