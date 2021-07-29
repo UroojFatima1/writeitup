@@ -21,15 +21,30 @@ if (isset($_POST["register"])) {
     } else if ($check_username > 0) {
         echo ("<script>alert(\"This username already exists. Enter a new one.\")</script>");
     } else {
-        $insert_q = "INSERT INTO users (username,email,dob,pass,dp) VALUES ('$username','$email','$dob','$pass','$dp');";
-        $insertion = mysqli_query($conn, $insert_q);
-        if ($insertion) {
-            echo ("<script>alert(\"User registered successfully.\")</script>");
-        } else {
-            echo ("<script>alert(\"User registration unsuccessful.\")</script>");
-        }
-    }
-}
+        if(isset($_FILES['su_dp'])){
+            $img_name = $_FILES['su_dp']['name'];//to get name of image
+            $img_type = $_FILES['su_dp']['type'];//to get type of image
+            $tmp_name = $_FILES['su_dp']['tmp_name']; //used to move image in folder
+            //exploding the image ato get extension
+            $img_explode = explode('.',$img_name);
+            $img_ext = end($img_explode); //to get extension of user file
+
+            $extensions = ["jpeg", "png", "jpg"];//valid extensions
+            //if user added image matches the extension
+            if(in_array($img_type, $types) === true){
+                $new_img_name = $username.$img_name;
+                echo($new_img_name);
+            if(move_uploaded_file($tmp_name,"images/".$new_img_name)){
+                $status="Active now";
+                $insert_q = "INSERT INTO users (username,email,dob,pass,dp,status) VALUES ('$username','$email','$dob','$pass','$new_img_name','$status');";
+                $insertion = mysqli_query($conn, $insert_q);
+                if ($insertion) {
+                    echo ("<script>alert(\"User registered successfully.\")</script>");
+                } else {
+                    echo ("<script>alert(\"User registration unsuccessful.\")</script>");
+                }}
+            }
+            else{echo("Please select correct image file");};}}}
 ?>
 <!DOCTYPE html>
 <html lang="en">

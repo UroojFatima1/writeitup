@@ -17,8 +17,8 @@ if (isset($_POST["register"])) {
         echo ("<script>alert(\"This username already exists. Enter a new one.\");
         window.location.href='signin.html';
         </script>");
-    } else {
-        $insert_q = "INSERT INTO users (username,email,dob,pass,dp) VALUES ('$username','$email','$dob','$pass','$dp');";
+    } else {$status="Active now";
+        $insert_q = "INSERT INTO users (username,email,dob,pass,dp,status) VALUES ('$username','$email','$dob','$pass','$dp','$status');";
         $insertion = mysqli_query($conn, $insert_q);
         if ($insertion){
             echo ("<script>alert(\"User registered successfully.\")</script>");
