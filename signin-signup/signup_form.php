@@ -21,8 +21,8 @@ if (isset($_POST["register"])) {
         $insert_q = "INSERT INTO users (username,email,dob,pass,dp) VALUES ('$username','$email','$dob','$pass','$dp');";
         $insertion = mysqli_query($conn, $insert_q);
         if ($insertion){
-            echo "<script>alert(\"User registration successful.\");
-            window.location.href='../reader/reader.php';</script>";
+            echo "<script>alert(\"User registration successful. Please login now.\");
+            window.location.href='signin.html';</script>";
         } else {
             echo "<script>alert(\"Username registration unsuccessful.\");
             window.location.href='signin.html';

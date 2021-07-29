@@ -98,7 +98,7 @@ session_start();
     </div>
     <footer>
         <div class="footer-logo">
-            <div class="logonav">WriteItUp</div>
+            <div class="footer-logo">WriteItUp</div>
             <p>&copy; CopyRight 2021</p>
         </div>
         <div class="write">
