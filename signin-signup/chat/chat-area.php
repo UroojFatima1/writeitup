@@ -74,12 +74,12 @@ if(!isset($_SESSION['si_username'])){
             </div>
         </div>
     </div>
-    <form action="#" method="POST" class="typing-area" autocomplete="off">
-        <input type="text" name="outgoing_id" class="outgoing_id" value="<?php echo $_SESSION['si_username'];?>" hidden>
-        <input type="text" name="incoming_id" class="incoming_id" value="<?php echo $user_id;?>" hidden> 
-        <input type="text" class="input-field" name="message" placeholder="Type a message here...">
-        <button><i class="fab fa-telegram-plane"></i></button>
-    </form> 
+    <form action="#" class="typing-area">
+        <input type="text" class="outgoing_id" name="outgoing_id" value="<?php echo $_SESSION['si_username']; ?>" hidden>   
+        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+        <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
+        <button><i class="button fab fa-telegram-plane"></i></button>
+    </form>
         
     </section>
     </div>

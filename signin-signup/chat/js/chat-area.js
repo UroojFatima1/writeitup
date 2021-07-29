@@ -1,20 +1,11 @@
-const form = document.querySelector(".typing-area"),
+const form = document.querySelector(".typing-area");
 
-inputField = form.querySelector(".input-field"),
-sendBtn = form.querySelector("button"),
+inputField = form.querySelector(".input-field");
+sendBtn = form.querySelector("button");
 chatBox = document.querySelector(".chat-box");
 
 form.onsubmit = (e)=>{
     e.preventDefault();
-}
-
-inputField.focus();
-inputField.onkeyup = ()=>{
-    if(inputField.value != ""){
-        sendBtn.classList.add("active");
-    }else{
-        sendBtn.classList.remove("active");
-    }
 }
 
 sendBtn.onclick = ()=>{
@@ -22,9 +13,11 @@ sendBtn.onclick = ()=>{
     xhr.open("POST", "php/insert-chat.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
-          if(xhr.status === 200){
-              inputField.value = "";
-              /*scrollToBottom();*/
+          if(xhr.status === 200){let data=xhr.response;
+              console.log(data);
+              if (data =="success"){
+                  location.href="chat.php";
+              }
           }
       }
     }
