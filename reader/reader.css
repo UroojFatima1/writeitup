@@ -198,6 +198,7 @@ font-weight:bold;
 }
 /*Footer*/
 footer{
+<<<<<<< HEAD
   background-color: black;
   color:white;
   display: flex;
@@ -207,6 +208,16 @@ footer{
   width:100%;
   bottom:0;
   z-index:1;
+=======
+    background-color: black;
+    color:white;
+    display: flex;
+    padding:0rem 3rem;
+    flex-direction:row;
+    justify-content: space-between;
+    width:100%;
+    bottom:0;
+>>>>>>> f5e296549768af25747248775d0f22d9a27df4b6
 }
 .footer-links{
   display: flex;
@@ -214,6 +225,7 @@ footer{
   margin:3rem;
 }
 .footer-logo,.footer-nav{
+<<<<<<< HEAD
   justify-content: left;
   display: flex;
   flex-direction: column;
@@ -224,6 +236,18 @@ footer{
 .footer-logo p{
   font-size: 1.3rem;
   
+=======
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left:1rem;
+}
+.footer-logo p{
+    font-size: 1.3rem;
+    
+>>>>>>> f5e296549768af25747248775d0f22d9a27df4b6
 }
 .footer-nav{
   list-style: none;
@@ -273,6 +297,35 @@ vertical-align: middle;
   color:white;
   text-decoration: none;
 }
+<<<<<<< HEAD
+=======
+.row{
+  margin:2rem;
+}
+.row-posters{
+  display:flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding:1.5rem;
+  border:2px darkblue dashed;
+  border-radius: 30px;
+  margin:.5rem 1.5rem;
+}
+.row-posters::-webkit-scrollbar{
+  display: none;
+}
+.poster{
+  width:18rem;
+  max-height:23rem;
+  object-fit: contain;
+  padding:1rem;
+  transition: transform 450ms;
+}
+.poster:hover{
+  transform: scale(1.08);
+}
+>>>>>>> f5e296549768af25747248775d0f22d9a27df4b6
 @media only screen and (max-width: 900px) {
     ul li a span{
         display: none;
