@@ -2,8 +2,6 @@ html{font-size:62.5%;
 scroll-behavior: smooth;
 overflow-x: hidden;
 }
-
-
 *{margin: 0rem;
     padding: 0rem;
     height: fit-content;

@@ -33,26 +33,82 @@ session_start();
             <li class="profile-menu"><img src="images/ayesha.png" alt="dp" class="dp"></li>
         </ul>
     </nav>
-    <main>
-        <p style="font-size:25px">Hello <?php echo $_SESSION["si_username"]; ?></p>
-    </main>
+    <div class="container">
+        <div class="spikes">
+            <h2 class="welcome">Welcome, <?php echo $_SESSION["si_username"]; ?> .</h2>
+        </div>
+        <!--Continue Reading-->
+        <div class="row">
+            <h2>Continue Reading</h2>
+            <div class="row-posters">
+                <img class="poster" src="../images/5.png" alt="book" />
+                <img class="poster" src="../images/4.png" alt="book" />
+                <img class="poster" src="../images/3.png" alt="book" />
+                <img class="poster" src="../images/5.png" alt="book" />
+                <img class="poster" src="../images/4.png" alt="book" />
+                <img class="poster" src="../images/3.png" alt="book" />
+                <img class="poster" src="../images/5.png" alt="book" />
+                <img class="poster" src="../images/4.png" alt="book" />
+                <img class="poster" src="../images/3.png" alt="book" />
+            </div>
+        </div>
+        <!--Trending-->
+        <div class="row">
+            <h2>Trending</h2>
+            <div class="row-posters trending">
+                <img class="poster" src="../images/2.png" alt="book" />
+                <div class="details">
+                    <p>Title: The Great Amazon</p>
+                    <p>By: Ayesha Khalid</p>
+                    <p>Genre: Adventure</p>
+                    <p>Reads: 345 <i class="fas fa-eye" style="font-size:1.75rem"></i></p>
+                </div>
+            </div>
+        </div>
+        <!--Suggested Stories-->
+        <div class="row">
+            <h2>Suggested For You</h2>
+            <div class="row-posters">
+                <img class="poster" src="../images/1.png" alt="book" />
+                <img class="poster" src="../images/2.png" alt="book" />
+                <img class="poster" src="../images/3.png" alt="book" />
+                <img class="poster" src="../images/4.png" alt="book" />
+                <img class="poster" src="../images/5.png" alt="book" />
+                <img class="poster" src="../images/1.png" alt="book" />
+                <img class="poster" src="../images/2.png" alt="book" />
+                <img class="poster" src="../images/3.png" alt="book" />
+                <img class="poster" src="../images/4.png" alt="book" />
+                <img class="poster" src="../images/5.png" alt="book" />
+                <img class="poster" src="../images/1.png" alt="book" />
+                <img class="poster" src="../images/2.png" alt="book" />
+                <img class="poster" src="../images/3.png" alt="book" />
+                <img class="poster" src="../images/4.png" alt="book" />
+                <img class="poster" src="../images/5.png" alt="book" />
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer-logo">
             <div class="logonav">WriteItUp</div>
             <p>&copy; CopyRight 2021</p>
         </div>
+        <div class="write">
+            <a href="../Writer/writer.html" class="footer-link">
+                <p>Want to write your <br>own story? <i class="fas fa-edit"></i></p>
+            </a>
+        </div>
         <div class="footer-links">
-        <ul class="nav footer-nav">
-            <li><a href="../index.html" class="navbtn">Home</a></li>
-            <li><a href="../index.html#features" class="navbtn">Features</a></li>
-            <li><a href="../index.html#scroll" class="navbtn">About</a></li>
-            <li><a href="../index.html#footer" class="navbtn">Contact</a></li>
-        </ul>
-        <ul class="footer-icons">
-            <a href="mailto:someone@example.com"><i class="fas fa-envelope f"></i></a>
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f f"></i></a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram f"></i></a>
-        </ul>
+            <ul class="nav footer-nav">
+                <li><a href="../index.html" class="navbtn">Home</a></li>
+                <li><a href="../index.html#features" class="navbtn">Features</a></li>
+                <li><a href="../index.html#scroll" class="navbtn">About</a></li>
+                <li><a href="../index.html#footer" class="navbtn">Contact</a></li>
+            </ul>
+            <ul class="footer-icons">
+                <a href="mailto:someone@example.com" target="_blank"><i class="fas fa-envelope f"></i></a>
+                <a href="https://www.facebook.com/writeitup" target="_blank"><i class="fab fa-facebook-f f"></i></a>
+                <a href="https://www.instagram.com/writeitup" target="_blank"><i class="fab fa-instagram f"></i></a>
+            </ul>
         </div>
     </footer>
 
