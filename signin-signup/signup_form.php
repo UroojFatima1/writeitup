@@ -17,13 +17,16 @@ if (isset($_POST["register"])) {
         echo ("<script>alert(\"This username already exists. Enter a new one.\");
         window.location.href='signin.html';
         </script>");
-    } else {$status="Active now";
-        $insert_q = "INSERT INTO users (username,email,dob,pass,dp,status) VALUES ('$username','$email','$dob','$pass','$dp','$status');";
+    } else {
+        $insert_q = "INSERT INTO users (username,email,dob,pass,dp) VALUES ('$username','$email','$dob','$pass','$dp');";
         $insertion = mysqli_query($conn, $insert_q);
         if ($insertion){
-            echo ("<script>alert(\"User registered successfully.\")</script>");
+            echo "<script>alert(\"User registration successful.\");
+            window.location.href='../reader/reader.html';</script>";
         } else {
-            echo ("<script>alert(\"User registration unsuccessful.\")</script>");
+            echo "<script>alert(\"Username registration unsuccessful.\");
+            window.location.href='signin.html';
+            </script>";
         }
     }
 }
