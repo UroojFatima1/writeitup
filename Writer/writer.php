@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 include_once "../signin-signup/config.php";
@@ -40,17 +39,24 @@ include_once "../signin-signup/config.php";
     </nav>
 
     <div class="container">
-        <div class="forms-container">
             <h1 class="heading">Start Writing..!!</h1>
-<form action="reader.php" method="POST">
-        <div class="write">
+            <div class="clearbtn" id="clearb"><button class="clear">Clear</button></div>
+    <form action="writerback.php" method="POST" name="writer" enctype="multipart/form-data">
+        <div class="writeup">
             <div class="rect">
-            <div class="rectangle"><img id="output"><div id="plustext"><label id="plus" for="fileinput">&plus;</label><input type="file" accept=".jpg,.png,.jpeg" name="cover" id="fileinput"> <span>Add Cover</span></div></div>
-            <div class="clearbtn" id="clearb"><button class="clear">Clear</button></div></div>
+                <div class="rectangle">
+                    <img id="output">
+                    <div id="plustext">
+                        <label id="plus" for="fileinput">&plus;</label>
+                        <input type="file" name="uploadfile" id="fileinput"> 
+                        <span>Add Cover</span>
+                    </div>
+                </div>
+            </div>
             <div class="form">
                 <div class="input-field">
                     <i class="fa fa-book"></i>
-                    <input type="text"  name="title" placeholder="Story Title" class="inp" required>
+                    <input type="text"  name="titlename" placeholder="Story Title" class="inp" required>
                 </div>
                 <div class="input-field">
                     <i class="fa fa-edit"></i>
@@ -58,7 +64,7 @@ include_once "../signin-signup/config.php";
                 </div>
                 <div class="input-field">
                     <i class="fa fa-server"></i>
-                    <select required class="inp">
+                    <select required class="inp" name="genre">
                         <option>Select a genre</option>
                         <option>Action</option>
                         <option>Comedy</option>
@@ -74,21 +80,45 @@ include_once "../signin-signup/config.php";
                 <div class="input-field">
                     <i class="fa fa-child"></i>
                     <div>
-                    <label class="rate" class="inp">Ratings:</label>
-                    <label for="youngadult" class="radiobutton">Young Adult</label>
-                    <input type="radio"  placeholder="Story" id="youngadult" name="Rating"> 
-                    <label for="adult" class="radiobutton">Mature</label>
-                    <input type="radio"  placeholder="Story" id="adult" name="Rating"> 
+                    <label class="rate" class="inp"  id="Rating">Ratings:</label>
+                    <label for="youngadult" class="radiobutton" >Young Adult</label>
+                    <input type="radio"  placeholder="Story" id="youngadult" name="Rating" value="Young Adult"> 
+                    <label for="adult" class="radiobutton" >Mature</label>
+                    <input type="radio"  placeholder="Story" id="adult" name="Rating" value="Mature"> 
                     
                 </div>
                 </div>
                 <div class="btncontainer">
-                    <button class="btn"> Proceed</button>
+                    <button name="upload" class="btn">Proceed</button>
                 </div>
             </div></div>
         </form>
+     
     </div>
-    </div>
+    <footer>
+        <div class="footer-logo">
+            <div class="footer-logo">WriteItUp</div>
+            <p>&copy; CopyRight 2021</p>
+        </div>
+        <div class="write">
+            <a href="../Writer/writer.html" class="footer-link">
+                <p>Want to write your <br>own story? <i class="fas fa-edit"></i></p>
+            </a>
+        </div>
+        <div class="footer-links">
+            <ul class="nav footer-nav">
+                <li><a href="../index.html" class="navbtn">Home</a></li>
+                <li><a href="../index.html#features" class="navbtn">Features</a></li>
+                <li><a href="../index.html#scroll" class="navbtn">About</a></li>
+                <li><a href="../index.html#footer" class="navbtn">Contact</a></li>
+            </ul>
+            <ul class="footer-icons">
+                <a href="mailto:someone@example.com" target="_blank"><i class="fas fa-envelope f"></i></a>
+                <a href="https://www.facebook.com/writeitup" target="_blank"><i class="fab fa-facebook-f f"></i></a>
+                <a href="https://www.instagram.com/writeitup" target="_blank"><i class="fab fa-instagram f"></i></a>
+            </ul>
+        </div>
+    </footer>
     <script src="writer.js"></script>
 
 </body>
