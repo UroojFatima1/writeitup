@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "config.php";
+include_once "php/config.php";
 $user=$_SESSION['si_username'];
 if(!isset($_SESSION['si_username'])){
     header("location: ../signin-signup/signin.html"); //redirect to login if not logged into the app
@@ -29,56 +29,13 @@ if(!isset($_SESSION['si_username'])){
              </div>
         </header>
     <div class="chat-box">
-        <div class="chat outgoing">
-            <div class="details">
-             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
-        <div class="chat incoming">
-            <img src="urooj.jpg" alt="">
-            <div class="details">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
-        <div class="chat outgoing">
-            <div class="details">
-             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
-        <div class="chat incoming">
-            <img src="urooj.jpg" alt="">
-            <div class="details">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
-        <div class="chat outgoing">
-            <div class="details">
-             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
-        <div class="chat incoming">
-            <img src="urooj.jpg" alt="">
-            <div class="details">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
-        <div class="chat outgoing">
-            <div class="details">
-             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
-        <div class="chat incoming">
-            <img src="urooj.jpg" alt="">
-            <div class="details">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, non! Nobis porro velit sed error, natus unde vitae delectus? Ullam dolor itaque nulla ipsam incidunt odio dolorem, tenetur eum maxime!</p>
-            </div>
-        </div>
+        
     </div>
     <form action="#" class="typing-area">
         <input type="text" class="outgoing_id" name="outgoing_id" value="<?php echo $_SESSION['si_username']; ?>" hidden>   
         <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
         <input type="text" name="message" class="input-field" placeholder="Type a message here..." autocomplete="off">
-        <button><i class="button fab fa-telegram-plane"></i></button>
+        <button><i class="fab fa-telegram-plane"></i></button>
     </form>
         
     </section>

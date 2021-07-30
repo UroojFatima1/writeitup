@@ -1,9 +1,6 @@
 <?php
 include 'config.php';
 session_start();
-if(isset($_SESSION['si_username'])){
-    echo "<script>window.location.href='../reader/reader.php';</script>";
-}
 if(isset($_POST["login"])){
     $s_username=mysqli_real_escape_string($conn,$_POST["si_username"]);
     $s_password=mysqli_real_escape_string($conn,md5($_POST["si_password"]));

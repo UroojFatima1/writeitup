@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "config.php";
+include_once "php/config.php";
 $user=$_SESSION['si_username'];
 if(!isset($_SESSION['si_username'])){
     header("location: ../signin-signup/signin.html"); //redirect to login if not logged into the app
