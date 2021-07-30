@@ -40,7 +40,7 @@
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                     </div>
                 </form>
-                <form action="signup_form.php" method="post" class="signup-form" name="register">
+                <form action="signup_form.php" method="post" class="signup-form" name="register" enctype="multipart/form-data">
                     <h2 class="form-title">Sign Up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="input-field">
                         <i class="fas fa-upload"></i>
-                        <input type="file" accept=".jpg,.png,.jpeg" name="su_dp">
+                        <input type="file" name="su_dp" value="">
                     </div>
                     <input type="submit" class="btn" value="Register" name="register">
                     <p class="social-text">Or Sign up using social platforms</p>
