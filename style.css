@@ -19,7 +19,7 @@ transition: all 2s linear;}
 .reveal.active1{transform: translate(0px);
     opacity: 1;}*/
 /*nav bar*/
-.topnav{height:fit-content;
+nav{height:fit-content;
     position: fixed;
     margin:auto;
     width: 100vw;
@@ -27,8 +27,11 @@ transition: all 2s linear;}
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-    z-index: 13;
-    overflow: hidden;}
+    z-index: 13;}
+
+.topnav{display: flex;
+    overflow: hidden;
+     }
 .logonav{justify-content: left;
     display: inline-block;
     margin-top: 0.25rem;
@@ -172,7 +175,8 @@ body::-webkit-scrollbar-thumb {
 .fm{overflow: hidden;
     width:50%;
     float:right;
-    height:100vh;}
+    height:100vh;
+padding:2rem;}
 
 
 /*about us section*/
@@ -463,10 +467,11 @@ margin-left:1.7rem;}
     top:50%;
     z-index: 11;
     transform: translate(-5%,-50%);}
-    .topnav{height:fit-content;
+    nav{height:fit-content;
         position: fixed;
         margin:auto;
-        width: 100vw;}
+        width: 100vw;
+     }
 
     .nav{background-color: black;
         position: fixed;
@@ -477,7 +482,9 @@ margin-left:1.7rem;}
         clip-path: circle(0rem at 90% -10%);
         -webkit-clip-path:circle(0rem at 90% -10%);
         transition: all 1s ease-out;
-        pointer-events: none;}
+        pointer-events: none;
+      
+    }
     .nav li a{position: relative;
         top:500%;
         right: -40%;
@@ -488,11 +495,12 @@ margin-left:1.7rem;}
         transition: all 1.25s ease-out;
         pointer-events: all;}
 
-    .logonav{ margin-top: 0.5rem;
+    .logonav{
+    margin-top: 0.5rem;
     font-size: 2.5rem;
     margin-left: 2rem;
     font-family: 'Fredericka the Great', cursive;
-} 
+}  
 .aboutus{font-size: 4rem;}
 .team{flex-direction: column;
         padding:0rem 0rem;
