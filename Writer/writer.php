@@ -1,7 +1,9 @@
+
 <?php
 session_start();
 include_once "../signin-signup/config.php";
     ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +24,7 @@ include_once "../signin-signup/config.php";
     <title>WriteItUp</title>
 </head>
 <body>
+
     <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
@@ -35,6 +38,7 @@ include_once "../signin-signup/config.php";
             <li class="profile-menu"><img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp"></li>
         </ul>
     </nav>
+
     <div class="container">
         <div class="forms-container">
             <h1 class="heading">Start Writing..!!</h1>
@@ -44,14 +48,13 @@ include_once "../signin-signup/config.php";
             <div class="rectangle"><img id="output"><div id="plustext"><label id="plus" for="fileinput">&plus;</label><input type="file" accept=".jpg,.png,.jpeg" name="cover" id="fileinput"> <span>Add Cover</span></div></div>
             <div class="clearbtn" id="clearb"><button class="clear">Clear</button></div></div>
             <div class="form">
-                <div class="fields">
                 <div class="input-field">
                     <i class="fa fa-book"></i>
-                    <input type="text"  name="title" placeholder="Story Title" class="inp" >
+                    <input type="text"  name="title" placeholder="Story Title" class="inp" required>
                 </div>
                 <div class="input-field">
                     <i class="fa fa-edit"></i>
-                    <textarea type="text"  name="description" placeholder="Story Description" class="inp" row="3" ></textarea>
+                    <textarea type="text"  name="description" placeholder="Story Description" class="inp" row="3" required></textarea>
                 </div>
                 <div class="input-field">
                     <i class="fa fa-server"></i>
@@ -80,38 +83,12 @@ include_once "../signin-signup/config.php";
                 </div>
                 </div>
                 <div class="btncontainer">
-                    <input class="btn" type="submit" value="Proceed">
-                </div>
+                    <button class="btn"> Proceed</button>
                 </div>
             </div></div>
         </form>
     </div>
     </div>
-    <footer>
-        <div class="footer-logo">
-            <div class="footer-logo">WriteItUp</div>
-            <p>&copy; CopyRight 2021</p>
-        </div>
-        <div class="write">
-            <a href="../Writer/writer.html" class="footer-link">
-                <p>Want to write your <br>own story? <i class="fas fa-edit"></i></p>
-            </a>
-        </div>
-        <div class="footer-links">
-            <ul class="nav footer-nav">
-                <li><a href="../index.html" class="navbtn">Home</a></li>
-                <li><a href="../index.html#features" class="navbtn">Features</a></li>
-                <li><a href="../index.html#scroll" class="navbtn">About</a></li>
-                <li><a href="../index.html#footer" class="navbtn">Contact</a></li>
-            </ul>
-            <ul class="footer-icons">
-                <a href="mailto:someone@example.com" target="_blank"><i class="fas fa-envelope f"></i></a>
-                <a href="https://www.facebook.com/writeitup" target="_blank"><i class="fab fa-facebook-f f"></i></a>
-                <a href="https://www.instagram.com/writeitup" target="_blank"><i class="fab fa-instagram f"></i></a>
-            </ul>
-        </div>
-    </footer>
-    
     <script src="writer.js"></script>
 
 </body>

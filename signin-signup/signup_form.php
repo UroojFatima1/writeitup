@@ -20,7 +20,8 @@ if (isset($_POST["register"])) {
         window.location.href='signin.html';
         </script>");
     } else {
-        $insert_q = "INSERT INTO users (username,email,dob,pass,dp) VALUES ('$username','$email','$dob','$pass','$dpName');";
+        $status="Active now";
+        $insert_q = "INSERT INTO users (username,email,dob,pass,dp,status) VALUES ('$username','$email','$dob','$pass','$dpName','$status');";
         $insertion = mysqli_query($conn, $insert_q);
         $select_dp="SELECT * FROM users where username='$username'";
         $selection_dp=mysqli_query($conn,$select_dp);

@@ -5,7 +5,8 @@ if(isset($_POST["login"])){
     $s_username=mysqli_real_escape_string($conn,$_POST["si_username"]);
     $s_password=mysqli_real_escape_string($conn,md5($_POST["si_password"]));
     $user=mysqli_query($conn,"SELECT username,dp from users where username='$s_username' AND pass='$s_password'");
-    if(mysqli_num_rows($user)>0){$status = "Active now";
+    if(mysqli_num_rows($user)>0){
+        $status = "Active now";
         $sql = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE username='$s_username' AND pass='$s_password'");
         $row=mysqli_fetch_assoc($user);
         $_SESSION['si_username']=$row['username'];

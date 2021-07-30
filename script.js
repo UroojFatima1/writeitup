@@ -51,6 +51,7 @@ function reveal(){
 
 s = document.getElementsByClassName("arrow");
 v = document.querySelector("#features");
-s.onclick=()=>{ v.style.display = "flex";}
-
+s.addEventListener("click", dis);
+function dis() {
+    v.style.display = "flex";}
 
