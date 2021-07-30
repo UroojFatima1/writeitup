@@ -22,16 +22,12 @@ if (isset($_POST["register"])) {
     } else {
         $insert_q = "INSERT INTO users (username,email,dob,pass,dp) VALUES ('$username','$email','$dob','$pass','$dpName');";
         $insertion = mysqli_query($conn, $insert_q);
-<<<<<<< HEAD
         $select_dp="SELECT * FROM users where username='$username'";
         $selection_dp=mysqli_query($conn,$select_dp);
         if (move_uploaded_file($dpTmpName,$folder)) {
             $_SESSION['dp']=$result['dp'];
         }
         if ($insertion) {
-=======
-        if ($insertion){
->>>>>>> 2a74c03dd82f9efa928eac13ce30f8ae7b5d7c90
             echo "<script>alert(\"User registration successful. Please login now.\");
             window.location.href='signin.html';</script>";
         } else {
