@@ -20,9 +20,9 @@ if(!isset($_SESSION['si_username'])){
               $row = mysqli_fetch_assoc($sql);
             }
           ?>
-          <img src="../user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
+          <img src="urooj.jpg" alt="">
           <div class="details">
-            <span><?php echo ucfirst($row['username'])?></span>
+            <span><?php echo $row['username']?></span>
             <p><?php echo $row['status']; ?></p>
           </div>
         </div>

@@ -22,9 +22,9 @@ if(!isset($_SESSION['si_username'])){
                 }
             ?>
             <a href="chat.php" class="back-icon"><i class="fa fa-arrow-left"></i></a>
-            <img src="../user-dps/<?php echo $row['dp']; ?>" alt="">
+            <img src="ayesha.jpg" alt="">
             <div class="details">
-                <span><?php echo ucfirst($row['username'])?></span>
+                <span><?php echo $row['username']?></span>
                 <p><?php echo $row['status']; ?></p>
              </div>
         </header>
