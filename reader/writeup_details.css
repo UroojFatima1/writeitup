@@ -5,8 +5,9 @@ html {
 }
 * {
   font-family: "Josefin Slab", serif;
-  margin: 0;
-  padding: 0;
+  padding: 0rem;
+  margin: 0rem;
+  box-sizing: border-box;
 }
 body {
   background-color: rgb(233, 233, 236);
@@ -88,6 +89,7 @@ ul li a:hover {
   cursor: pointer;
 }
 .dp {
+  border-radius: 50%;
   width: 50px;
   height: 50px;
   margin-left: 1.5rem;
@@ -122,40 +124,11 @@ ul li a:hover {
 .search-r {
   display: none;
 }
-.menu-area{
-  position:relative;
-  display: flex;
-  flex-direction: column;
-}
-.menu{
-  position:absolute;
-  min-width:160px;
-  z-index:2;
-  margin-top:6.5rem;
-  margin-right:9.5rem;
-  display:none;
-}
-.menu a{
-  display: block;
-  transition: 0.5s;
-  background-color:white;
-  color:black;
-}
-.menu a:hover{
-  color:white;
-  background-color:black;
-}
-li.menu-area:hover{
-  cursor: pointer;
-}
-.menu-area:hover .menu{
-    display: block;
-}
-/*Main Body*/
 .spikes {
   position: relative;
   background: #2c3e50;
-  height: 22vh;
+  width: 100%;
+  height: 18vh;
   margin-bottom: 4rem;
   display: flex;
   justify-content: center;
@@ -167,7 +140,7 @@ li.menu-area:hover{
   right: 0;
   left: -0%;
   top: 100%;
-  z-index: 1;
+  z-index: 10;
   display: block;
   height: 50px;
   background-size: 50px 100%;
@@ -175,82 +148,149 @@ li.menu-area:hover{
     linear-gradient(225deg, #2c3e50 25%, transparent 25%);
   background-position: 0 0;
 }
-.welcome {
+.heading {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #ffffff;
-}
-.row {
-  margin: 2rem;
-}
-.row-posters {
-  display: flex;
-  justify-content: flex-start;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  padding: 1.5rem;
-  border: 4px white dashed;
-  border-radius: 30px;
-  margin: 0.5rem 1.5rem;
-  background: #3f5870;
-}
-.row-posters::-webkit-scrollbar {
-  display: none;
-}
-.poster {
-  position: relative;
-  width: 18rem;
-  max-height: 23rem;
-  object-fit: contain;
-  padding: 1rem;
-  transition: transform 450ms;
-  cursor: pointer;
-}
-.poster-overlay {
-  position: absolute;
-  text-align: center;
-  object-fit: contain;
-  margin: 1rem;
-  padding: 1rem;
-  width: 12rem;
-  height: 21rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  object-fit: contain;
-  padding: 1rem;
-  transition: transform 450ms;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  opacity: 0;
-}
-.poster-overlay:hover {
-  opacity: 1;
-}
-.poster:hover,
-.poster-overlay:hover {
-  transform: scale(1.08);
-}
-h2 {
   font-family: "Fredericka the Great", cursive;
-  padding-left: 3rem;
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 4rem;
+  font-weight: lighter;
 }
-.trending {
+.rectangle {
+  position: relative;
+  margin-top: 1rem;
+  height:30rem;
+  width:23rem;
+  border: 3px solid rgb(133, 125, 125);
+  background-color: rgba(233, 231, 231, 0.774);
+  justify-content: left;
+  align-items: left;
+  z-index: 1;
+}
+.rectangle img{
+  width: 100%;
+  height: 100%;
+}
+.forms-container {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  margin-bottom: 3rem;
 }
-.details {
-  margin: 2rem;
-  padding: 4rem;
+.rectangle span {
+  display: flex;
+  font-family: "Josefin Slab", serif;
+  font-weight: 600;
   font-size: 2.5rem;
-  color: white;
+  color: grey;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: -1rem;
+}
+.form{
+    margin-left:7rem;
+}
+.input-field {
+  font-family: "Josefin Slab", serif;
+  min-width: 400px;
+  background-color: #f0f0f0;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  margin: 1rem 0rem;
+}
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  font-size: 1.5rem;
+}
+.input-field input,
+.input-field select,
+.input-field textarea,
+.input-field label {
+  margin: 1rem 0rem;
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1.3;
+  font-size: 1.75rem;
+  color: black;
   font-weight: bolder;
 }
+.input-field select option,
+.input-field select {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 110px;
+}
+.input-field:placeholder-shown {
+  margin-top: 3rem;
+  color: #acacac;
+}
+.input-field textarea {
+  width: 100%;
+  max-width: 95%;
+}
+.radiobutton {
+  display: inline-block;
+  padding-left: 0rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding-left: 3rem;
+}
+
+.btn,
+.clear {
+  width: 150px;
+  height: 50px;
+  background: #394f64;
+  border-radius: 55px;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Fredericka the Great", cursive;
+  transition: all 0.5s;
+}
+.btncontainer {
+  display: flex;
+  justify-content: center;
+  margin-right: 5rem;
+  margin-top: 2rem;
+}
+.btn:hover,
+.clear:hover {
+background: #2c3e50;
+  cursor: pointer;
+}
+.clear {
+  background-color: rgba(233, 231, 231, 0.774);
+  border-radius: 55px;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Fredericka the Great", cursive;
+  transition: all 0.5s;
+}
+
+.clearbtn {
+  display: none;
+  position: relative;
+  justify-content: center;
+  top: 31.5rem;
+  z-index: 3;
+}
+
 /*Footer*/
 footer {
   background-color: black;
@@ -343,6 +383,28 @@ footer {
   color: white;
   text-decoration: none;
 }
+.container{
+  border:2px dashed white;
+  margin:4rem;
+  line-height: 1.5;
+  padding:3rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+.story-container{
+  margin:3rem;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:4rem;
+}
+#read_another{
+  display: none;
+}
+.read_show{
+  display:inline;
+}
 @media only screen and (max-width: 900px) {
   ul li a span {
     display: none;
@@ -355,5 +417,21 @@ footer {
   }
   .write {
     display: none;
+  }
+  .forms-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form{
+    margin:auto;
+    margin-top: 2rem;
+  }
+  .container{
+    font-size: 1.75rem;
+  }
+  .story-container{
+    margin:1rem;
+    margin-bottom:4rem;
   }
 }

@@ -1,5 +1,17 @@
 <?php
+include '../signin-signup/config.php';
 session_start();
+$display_cover = mysqli_query($conn, "SELECT DISTINCT * from story");
+$result = mysqli_fetch_assoc($display_cover);
+$_SESSION["cover"] = $result["coverPage"];
+$_SESSION["title"] = $result["title"];
+$_SESSION["authorUsername"] = $result["authorUsername"];
+$_SESSION["desc"] = $result["description"];
+$_SESSION["genre"] = $result["genre"];
+$_SESSION["rating"] = $result["rating"];
+$_SESSION["chapterNumber"] = $result["chapterNumber"];
+$_SESSION["noOfChapters"] = $result["noOfChapters"];
+$_SESSION["text"] = $result["text"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +39,17 @@ session_start();
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
-            <li><a href="../Writer/writer.php" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
+            <li><a href="../Writer/writer.html" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
-            <li class="profile-menu"><img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp"></li>
+            <li class="menu-area">
+                <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
+                <div class="menu">
+                    <a href="#">Inbox</a>
+                    <a href="#">Notifications
+                    <a href="#">Help</a>
+                    <a href="#">Logout</a>
+                </div>
+            </li>
         </ul>
     </nav>
     <div class="container">
@@ -40,24 +60,7 @@ session_start();
         <div class="row">
             <h2>Continue Reading</h2>
             <div class="row-posters">
-                <img class="poster" src="../images/5.png" alt="book" />
-                    <div class="poster-overlay">
-                        <h1>By:ddhddfh</h1>
-                    </div>
-                <img class="poster" src="../images/4.png" alt="book" />
-                <img class="poster" src="../images/3.png" alt="book" />
-                <img class="poster" src="../images/5.png" alt="book" />
-                
-                <img class="poster" src="../images/4.png" alt="book">
-                
-                <img class="poster" src="../images/3.png" alt="book" />
-                
-                <img class="poster" src="../images/5.png" alt="book" />
-                
-                <img class="poster" src="../images/4.png" alt="book" />
-                
-                <img class="poster" src="../images/3.png" alt="book" />
-                
+                <img class="poster" src="../cover-pages/<?php echo $_SESSION["cover"]; ?>" alt="book" onclick="loadStory()" />
             </div>
         </div>
         <!--Trending-->
@@ -101,13 +104,13 @@ session_start();
             <p>&copy; CopyRight 2021</p>
         </div>
         <div class="write">
-            <a href="../Writer/writer.html" class="footer-link">
+            <a href="../Writer/writer.php" class="footer-link">
                 <p>Want to write your <br>own story? <i class="fas fa-edit"></i></p>
             </a>
         </div>
         <div class="footer-links">
             <ul class="nav footer-nav">
-                <li><a href="../index.html" class="navbtn">Home</a></li>
+                <li><a href="../index.php" class="navbtn">Home</a></li>
                 <li><a href="../index.html#features" class="navbtn">Features</a></li>
                 <li><a href="../index.html#scroll" class="navbtn">About</a></li>
                 <li><a href="../index.html#footer" class="navbtn">Contact</a></li>
@@ -121,6 +124,24 @@ session_start();
     </footer>
 
 </body>
-<script src="reader.js"></script>
+<script>
+    var search_icon = document.querySelector(".search-r");
+    var search_box = document.querySelector(".search-box");
+    var logo = document.querySelector(".logonav");
+    var list_items = document.querySelector(".nav");
+    search_icon.addEventListener("click", toggle);
+
+    function toggle() {
+        search_box.style.display = "flex";
+        search_box.style.margin = "auto";
+        search_icon.style.display = "none";
+        logo.style.display = "none";
+        list_items.style.display = "none";
+    }
+
+    function loadStory() {
+        window.location.href = 'writeup_details.php';
+    }
+</script>
 
 </html>
