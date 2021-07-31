@@ -1,6 +1,6 @@
 <?php
+include_once '../signin-signup/config.php';
 session_start();
-include_once "../signin-signup/config.php";
     ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,8 @@ include_once "../signin-signup/config.php";
     </nav>
 
     <div class="container">
-            <h1 class="heading">Start Writing..!!</h1>
+        <div class="spikes">
+            <h1 class="heading">Start Writing..!!</h1></div>
             <div class="clearbtn" id="clearb"><button class="clear">Clear</button></div>
     <form action="writerback.php" method="POST" name="writer" enctype="multipart/form-data">
         <div class="writeup">
