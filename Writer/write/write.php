@@ -22,8 +22,7 @@ session_start();
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
     <title>WriteItUp</title>
 </head>
-<body>
-    <nav class="topnav">
+<nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
             <input type="search" placeholder="Browse">
@@ -33,9 +32,19 @@ session_start();
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
             <li><a href="../Writer/writer.html" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
-            <li class="profile-menu"><img src="../../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp"></li>
+            <li class="menu-area">
+                <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
+                <div class="menu">
+                    <a href="#">Inbox</a>
+                    <a href="#">Notifications
+                    <a href="#">Help</a>
+                    <a href="#">Logout</a>
+                </div>
+            </li>
         </ul>
     </nav>
+    <body>
+
     <div class="box">
         <div class="left">
             <div class="rectangle">

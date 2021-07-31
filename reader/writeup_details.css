@@ -124,6 +124,35 @@ ul li a:hover {
 .search-r {
   display: none;
 }
+.menu-area{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+}
+.menu{
+  position:absolute;
+  min-width:160px;
+  z-index:2;
+  margin-top:6.5rem;
+  margin-right:9.5rem;
+  display:none;
+}
+.menu a{
+  display: block;
+  transition: 0.5s;
+  color:white;
+  background-color:rgba(128, 128, 128, 0.801);
+}
+.menu a:hover{
+  color:white;
+  background-color:black;
+}
+li.menu-area:hover{
+  cursor: pointer;
+}
+.menu-area:hover .menu{
+    display: block;
+}
 .spikes {
   position: relative;
   background: #2c3e50;

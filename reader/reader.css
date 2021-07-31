@@ -138,8 +138,8 @@ ul li a:hover {
 .menu a{
   display: block;
   transition: 0.5s;
-  background-color:white;
-  color:black;
+  color:white;
+  background-color:rgba(128, 128, 128, 0.801);
 }
 .menu a:hover{
   color:white;

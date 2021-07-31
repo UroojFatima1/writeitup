@@ -39,7 +39,15 @@ include_once "../signin-signup/config.php";
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
             <li><a href="../Writer/writer.php" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
-            <li class="profile-menu"><img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp"></li>
+            <li class="menu-area">
+                <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
+                <div class="menu">
+                    <a href="#">Inbox</a>
+                    <a href="#">Notifications
+                    <a href="#">Help</a>
+                    <a href="#">Logout</a>
+                </div>
+            </li>
         </ul>
     </nav>
     <div class="spikes">

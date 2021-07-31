@@ -24,7 +24,7 @@ session_start();
 </head>
 <body>
 
-    <nav class="topnav">
+<nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
             <input type="search" placeholder="Browse">
@@ -32,17 +32,24 @@ session_start();
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
-            <li><a href="../Writer/writer.html" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
+            <li><a href="../reader/reader.php"  class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
-            <li class="profile-menu"><img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp"></li>
+            <li class="menu-area">
+                <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
+                <div class="menu">
+                    <a href="#">Inbox</a>
+                    <a href="#">Notifications
+                    <a href="#">Help</a>
+                    <a href="#">Logout</a>
+                </div>
+            </li>
         </ul>
     </nav>
-
     <div class="container">
         <div class="spikes">
             <h1 class="heading">Start Writing..!!</h1></div>
-            <div class="clearbtn" id="clearb"><button class="clear">Clear</button></div>
-    <form action="writerback.php" method="POST" name="writer" enctype="multipart/form-data">
+            
+    <form action="" method="POST" name="writer" enctype="multipart/form-data" >
         <div class="writeup">
             <div class="rect">
                 <div class="rectangle">
@@ -52,7 +59,9 @@ session_start();
                         <input type="file" name="uploadfile" id="fileinput"> 
                         <span>Add Cover</span>
                     </div>
+                    <div class="clearbtn" id="clearb" ><button class="clear" name="clear">Clear</button></div>
                 </div>
+               
             </div>
             <div class="form">
                 <div class="input-field">
@@ -61,7 +70,7 @@ session_start();
                 </div>
                 <div class="input-field">
                     <i class="fa fa-edit"></i>
-                    <textarea type="text"  name="description" placeholder="Story Description" class="inp" row="3" required></textarea>
+                    <textarea name="description" id="desc" placeholder="Story Description" class="inp" row="3" required></textarea>
                 </div>
                 <div class="input-field">
                     <i class="fa fa-server"></i>

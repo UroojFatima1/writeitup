@@ -31,7 +31,7 @@ $_SESSION["text"] = $result["text"];
 </head>
 
 <body>
-    <nav class="topnav">
+<nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
             <input type="search" placeholder="Browse">
@@ -39,7 +39,7 @@ $_SESSION["text"] = $result["text"];
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
-            <li><a href="../Writer/writer.html" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
+            <li><a href="../Writer/writer.php" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">

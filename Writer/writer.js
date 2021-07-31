@@ -6,8 +6,10 @@ img.src = URL.createObjectURL(event.target.files[0]);
 img.style.display="block";
 p.style.display="none";
 btn.style.display="flex";
+
 })
 btn.addEventListener("click",(event) =>{var img = document.getElementById('output');
+btn.disabled = true;
 img.src="";
 img.style.display="none";
 p.style.display="block";
