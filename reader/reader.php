@@ -1,5 +1,5 @@
 <?php
-include '../signin-signup/config.php';
+include '../config.php';
 session_start();
 $display_cover = mysqli_query($conn, "SELECT DISTINCT * from story");
 $result = mysqli_fetch_assoc($display_cover);
@@ -44,9 +44,9 @@ $_SESSION["text"] = $result["text"];
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="#">Inbox</a>
+                    <a href="../chat/chat.php">Inbox</a>
                     <a href="#">Notifications
-                    <a href="#">Help</a>
+                    <a href="../index.html#footer">Help</a>
                     <a href="#">Logout</a>
                 </div>
             </li>
@@ -122,26 +122,6 @@ $_SESSION["text"] = $result["text"];
             </ul>
         </div>
     </footer>
-
+<script src="reader.js"></script>
 </body>
-<script>
-    var search_icon = document.querySelector(".search-r");
-    var search_box = document.querySelector(".search-box");
-    var logo = document.querySelector(".logonav");
-    var list_items = document.querySelector(".nav");
-    search_icon.addEventListener("click", toggle);
-
-    function toggle() {
-        search_box.style.display = "flex";
-        search_box.style.margin = "auto";
-        search_icon.style.display = "none";
-        logo.style.display = "none";
-        list_items.style.display = "none";
-    }
-
-    function loadStory() {
-        window.location.href = 'writeup_details.php';
-    }
-</script>
-
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>SQL Server Migration Assistant: Assessment Report</title>
+	<link media="all" rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+	<frameset rows='52,*' bordercolor="black" id="main" name="title" border="1" frameborder="1" framespacing="0">
+		<frame scrolling='no' src="image.html" name="splash" noresize/>
+		<frameset rows='*,30%' bordercolor="black" id="maincontent" border="1" frameborder="1" framespacing="2">
+			<frameset cols="20%,*,0" bordercolor="black" id="centercontent" border="1" frameborder="1">
+				<frame src="treeview.html" class="tree" id="treeframe" name="tree"/>
+				<frameset rows='35,*' bordercolor="black" border="0" frameborder="0" framespacing="2" name="twoFrames" id="twoFrames">
+					<frame bgcolor="mistyrose" src="about:blank" class="path" name="nav" id="nav" scrolling="no"/>
+					<frameset cols="*,0">
+						<frame src="about:blank" name="scenario" id="scenario"/>
+						<frameset rows="0,*">
+							<frame noresize="true" src="./messages.html"/>
+						</frameset>
+					</frameset>
+				</frameset>
+			</frameset>
+			<frame topmargin="0" leftmargin="0" rightmargin="0" marginheight="0" marginwidth="0"  class="messages" src="messages.html" name="messages" id="messages"/>
+		</frameset>
+	</frameset>
+</html>

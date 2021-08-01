@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../config.php';
 session_start();
 if(isset($_POST["login"])){
     $s_username=mysqli_real_escape_string($conn,$_POST["si_username"]);

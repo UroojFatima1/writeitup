@@ -1,5 +1,5 @@
 <?php
-include_once '../signin-signup/config.php';
+include_once '../config.php';
 session_start();
     ?>
 
@@ -23,7 +23,6 @@ session_start();
     <title>WriteItUp</title>
 </head>
 <body>
-
 <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
@@ -32,14 +31,14 @@ session_start();
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
-            <li><a href="../reader/reader.php"  class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
+            <li><a href="../reader/reader.php" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="#">Inbox</a>
+                    <a href="../chat/chat.php">Inbox</a>
                     <a href="#">Notifications
-                    <a href="#">Help</a>
+                    <a href="../index.html#footer">Help</a>
                     <a href="#">Logout</a>
                 </div>
             </li>
@@ -47,7 +46,7 @@ session_start();
     </nav>
     <div class="container">
         <div class="spikes">
-            <h1 class="heading">Start Writing..!!</h1></div>
+            <h1 class="heading">Start Writing!</h1></div>
             
     <form action="" method="POST" name="writer" enctype="multipart/form-data" >
         <div class="writeup">
@@ -130,6 +129,5 @@ session_start();
         </div>
     </footer>
     <script src="writer.js"></script>
-
 </body>
 </html>

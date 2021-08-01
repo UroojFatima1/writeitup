@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link media="all" rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/functions.js"></script>
+    <script>$(window).on('load', function(e){
+    var conversionMessageId = getUrlParameterValue(document.location.search, 'conversionMessageId');
+    document.getElementById('sql-frame').src = 'sql.html?conversionMessageId=' + conversionMessageId;
+});
+</script>
+  </head>
+  <frameset rows="*">
+    <frameset cols="*" id="left-right-frameset">
+      <frame frameSpacing="0" frameBorder="0" rows="0,*" leftMargin="0" topMargin="0" marginHeight="0" marginWidth="0" name="sqlFrame" id="sql-frame" class="sql-frame"></frame>
+    </frameset>
+  </frameset>
+</html>

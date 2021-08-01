@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../signin-signup/config.php";
+include_once "../config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +24,7 @@ include_once "../signin-signup/config.php";
 </head>
 
 <body>
-    <nav class="topnav">
+<nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
             <input type="search" placeholder="Browse">
@@ -34,7 +34,15 @@ include_once "../signin-signup/config.php";
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
             <li><a href="../Writer/writer.php" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
-            <li class="profile-menu"><img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp"></li>
+            <li class="menu-area">
+                <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
+                <div class="menu">
+                <a href="../chat/chat.php">Inbox</a>
+                    <a href="#">Notifications
+                    <a href="../index.html#footer">Help</a>
+                    <a href="#">Logout</a>
+                </div>
+            </li>
         </ul>
     </nav>
     <div class="spikes">
@@ -89,27 +97,6 @@ include_once "../signin-signup/config.php";
             </ul>
         </div>
     </footer>
+    <script src="reader.js"></script>
 </body>
-<script>
-    var search_icon = document.querySelector(".search-r");
-    var search_box = document.querySelector(".search-box");
-    var logo = document.querySelector(".logonav");
-    var list_items = document.querySelector(".nav");
-    var read_button = document.getElementById("read_button");
-    search_icon.addEventListener("click", toggle);
-
-    function toggle() {
-        search_box.style.display = "flex";
-        search_box.style.margin = "auto";
-        search_icon.style.display = "none";
-        logo.style.display = "none";
-        list_items.style.display = "none";
-    }
-    read_button.addEventListener("click", redirect);
-
-    function redirect() {
-        window.location.href = 'writeup_story.php';
-    }
-</script>
-
 </html>

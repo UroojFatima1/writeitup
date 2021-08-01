@@ -129,13 +129,18 @@ nav {
   display: flex;
   flex-direction: column;
 }
+.menu-area{
+  position:relative;
+  display: flex;
+  flex-direction: column;
+}
 .menu{
+  display:none;
   position:absolute;
   min-width:160px;
   z-index:2;
   margin-top:6.5rem;
-  margin-right:9.5rem;
-  display:none;
+  margin-right:5rem;
 }
 .menu a{
   display: block;
@@ -149,9 +154,6 @@ nav {
 }
 li.menu-area:hover{
   cursor: pointer;
-}
-.menu-area:hover .menu{
-    display: block;
 }
   /*Main Body*/
 .spikes {

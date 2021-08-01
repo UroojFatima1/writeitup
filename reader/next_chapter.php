@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../signin-signup/config.php";
+include_once "../config.php";
 if(isset($_POST['read_another'])){
     echo "<script>window.location.href='reader.php';</script>";
 }

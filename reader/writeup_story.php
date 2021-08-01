@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../signin-signup/config.php";
+include_once "../config.php";
 /*if($_SESSION['chapterNumber']== $_SESSION["noOfChapters"]){
     echo "
     <script>alert('last chapter');</script>";}
@@ -29,7 +29,7 @@ include_once "../signin-signup/config.php";
 </head>
 
 <body>
-    <nav class="topnav">
+<nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
             <input type="search" placeholder="Browse">
@@ -42,9 +42,9 @@ include_once "../signin-signup/config.php";
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="#">Inbox</a>
+                <a href="../chat/chat.php">Inbox</a>
                     <a href="#">Notifications
-                    <a href="#">Help</a>
+                    <a href="../index.html#footer">Help</a>
                     <a href="#">Logout</a>
                 </div>
             </li>
@@ -86,24 +86,6 @@ include_once "../signin-signup/config.php";
             </ul>
         </div>
     </footer>
+    <script src="reader.js"></script>
 </body>
-<script>
-var search_icon = document.querySelector(".search-r");
-var search_box = document.querySelector(".search-box");
-var logo = document.querySelector(".logonav");
-var list_items = document.querySelector(".nav");
-var read_btn=document.getElementById('read_another');
-var next_btn=document.getElementById('next');
-search_icon.addEventListener("click", toggle);
-function toggle(){
-        search_box.style.display = "flex";
-        search_box.style.margin = "auto";
-        search_icon.style.display = "none";
-        logo.style.display = "none";
-        list_items.style.display = "none";
-}
-function loadStory(){
-    window.location.href='writeup_details.php';
-}
-</script>
 </html>

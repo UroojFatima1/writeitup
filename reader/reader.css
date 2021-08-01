@@ -128,12 +128,12 @@ ul li a:hover {
   flex-direction: column;
 }
 .menu{
+  display:none;
   position:absolute;
   min-width:160px;
   z-index:2;
   margin-top:6.5rem;
   margin-right:9.5rem;
-  display:none;
 }
 .menu a{
   display: block;
@@ -147,9 +147,6 @@ ul li a:hover {
 }
 li.menu-area:hover{
   cursor: pointer;
-}
-.menu-area:hover .menu{
-    display: block;
 }
 /*Main Body*/
 .spikes {
