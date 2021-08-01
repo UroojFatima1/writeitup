@@ -22,6 +22,7 @@ session_start();
     <link rel="shortcut icon" href="../../favicon.png" type="image/x-icon" />
     <title>WriteItUp</title>
 </head>
+<body>
 <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
@@ -58,7 +59,7 @@ session_start();
             <div class="save" ><input type="submit" name="save" value="Save"></div>
             </form>
         </div>
-        <div class="buttons"><button class="btn">Next Chapter</button>
+        <div class="buttons"><button class="btn" name="next" id="next" method="POST">Next Chapter</button>
             <button class="btn">Completed</button></div>
     <footer><div class="footer-logo">
             <div class="footer-logo">WriteItUp</div>
