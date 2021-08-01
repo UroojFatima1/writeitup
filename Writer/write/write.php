@@ -1,5 +1,5 @@
 <?php
-include_once '../../config.php';
+include_once '../../signin-signup/config.php';
 session_start();
 
     ?>
@@ -19,7 +19,7 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>   <!---To add icons-->
     <link rel="stylesheet" href="write.css">   
     <link rel="preconnect" href="https://fonts.gstatic.com">   <!---Fonts-->
-    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../favicon.png" type="image/x-icon" />
     <title>WriteItUp</title>
 </head>
 <nav class="topnav">
@@ -30,42 +30,36 @@ session_start();
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
-            <li><a href="../reader/reader.php" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
+            <li><a href="../Writer/writer.html" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
-                <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
+                <img src="../../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="../chat/chat.php">Inbox</a>
+                    <a href="#">Inbox</a>
                     <a href="#">Notifications
-                    <a href="../index.html#footer">Help</a>
+                    <a href="#">Help</a>
                     <a href="#">Logout</a>
                 </div>
             </li>
         </ul>
     </nav>
     <body>
-
-    <div class="box">
-        <div class="left">
-            <div class="rectangle">
-            <img src="../../cover-pages/<?php echo $_SESSION["cover"]; ?>" alt="cover" class="cover">
-            </div>
-            <div class="details">
-                <p class="name" id="title"><?php echo $_SESSION["title"]; ?></p>
-            </div>
-        </div>
-        <div class="right">
-            <label for="chapter">Chapter No</label>
-            <form action="writeback.php" method="POST">
-            <input type="number" min="1" max="20" required name="chap" autocomplete="off" >
-            <hr>
-            <textarea name="story" spellcheck="true" placeholder="Story here" class="story" autocomplete="off"></textarea>
-            <input type="submit" name="save" value="Save">
-            </form>
-            <button>next chapter</button>
-            <button>Completed</button>
-        </div>
+    <div class="spikes">
+        <h2 class="heading"><?php echo $_SESSION["titlename"];?></h2>
     </div>
+        
+        <div class="container">
+            <label for="chap" class="chapter">Chapter No</label>
+            <form action="writeback.php" method="POST">
+            <div class="chapter" ><input type="number" min="1" max="20" required name="chap" autocomplete="off" placeholder="Choose between 1 to 20"></div>
+            <hr>
+            <div class="story-container">
+            <textarea name="story" spellcheck="true" placeholder="Write your story here" class="story" autocomplete="off"></textarea></div>
+            <div class="save" ><input type="submit" name="save" value="Save"></div>
+            </form>
+        </div>
+        <div class="buttons"><button class="btn">Next Chapter</button>
+            <button class="btn">Completed</button></div>
     <footer><div class="footer-logo">
             <div class="footer-logo">WriteItUp</div>
             <p>&copy; CopyRight 2021</p>
@@ -89,6 +83,6 @@ session_start();
             </ul>
         </div>
     </footer>
-    <script src="../writer.js"></script>
+    <script src="write.js"></script>
 </body>
 </html>

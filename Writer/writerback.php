@@ -17,7 +17,7 @@ session_start();
         $insertion = mysqli_query($conn, $insert_q);
         $select_dp=mysqli_query($conn,"SELECT * FROM story where authorUsername='$username' and title='$title'");
         $row=mysqli_fetch_assoc($select_dp);
-        $_SESSION["title"]=$row["title"];
+        $_SESSION["titlename"]=$row["title"];
         $selection_dp=mysqli_query($conn,$select_dp);
         if (move_uploaded_file($dpTmpName,$folder)) {
             echo $_SESSION['title'];

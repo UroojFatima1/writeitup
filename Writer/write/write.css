@@ -27,12 +27,28 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+body{ background-color: rgb(219, 219, 243);}
+.container{
+  border:2px dashed white;
+  margin:4rem;
+  line-height: 1.5;
+  padding:3rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+.story-container{
+  margin:2rem;
+  margin-left:0.5%;
+  margin-right: 0.5%;
+  display: flex;
+  flex-direction:column;
+}
 /*Nav Bar*/
 nav {
     height: fit-content;
     margin: auto;
     padding: 1rem;
-    width: 100vw;
+    width: 100%;
     background-color: black;
     display: inline-flex;
     flex-direction: row;
@@ -124,24 +140,19 @@ nav {
   .search-r {
     display: none;
   }
-  hr{max-width:900px;}
+  hr{max-width:90vw;}
   .menu-area{
   position:relative;
   display: flex;
   flex-direction: column;
 }
-.menu-area{
-  position:relative;
-  display: flex;
-  flex-direction: column;
-}
 .menu{
-  display:none;
   position:absolute;
   min-width:160px;
-  z-index:2;
+  z-index:10;
   margin-top:6.5rem;
-  margin-right:5rem;
+  margin-right:9.5rem;
+  display:none;
 }
 .menu a{
   display: block;
@@ -156,30 +167,89 @@ nav {
 li.menu-area:hover{
   cursor: pointer;
 }
-.box{display: flex;
-    margin-top: 4rem;}
-.left{flex-basis:45%;
-    margin-left:5rem;
+.menu-area:hover .menu{
+    display: block;
 }
-.right{flex-basis:65%;}
-.story{background-color: white;
-  margin-right:4rem;
-min-height:90vh;
-margin-bottom: 2rem;
-min-width:900px;}
-.cover{position:relative;
-  height: 280px;
-  width: 230px;
-  border: 3px solid rgb(133, 125, 125);
-  z-index:2;}
-.rectangle {
-  height: 280px;
-  width: 230px;
-  justify-content: left;
-  align-items: left;
-  z-index:1;
+.spikes {
+  position: relative;
+  background: #2c3e50;
+  width: 100%;
+  height: 18vh;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.details{font-size: 2rem;}
+.spikes::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: -0%;
+  top: 100%;
+  z-index: 10;
+  display: block;
+  height: 50px;
+  background-size: 50px 100%;
+  background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%),
+    linear-gradient(225deg, #2c3e50 25%, transparent 25%);
+  background-position: 0 0;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Fredericka the Great", cursive;
+  font-size: 4rem;
+  font-weight: lighter;
+}
+textarea{ border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  min-height:90vh;
+  max-width:90vw;
+  font-size:2.3rem;
+  color:black;
+  font-weight: 500;}
+.chapter,.save{display: flex;
+  justify-content: center;}
+.container label{ font-size:2.5rem;}
+input[type="number"]{border: none;
+  background-color: transparent;
+  outline: none;
+  margin-bottom: 1.25%;
+  margin-top: 1%;
+  font-size:3rem;
+  color:black;
+  font-weight: 600;
+  text-align: center;
+  align-items: center;
+min-width: 30vw;}
+.save input,.btn{width: 125px;
+  height: 50px;
+  background: #394f64;
+  border-radius: 55px;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Fredericka the Great", cursive;
+  transition: all 0.5s;}
+.save input:hover{
+background: #2c3e50;
+  cursor: pointer;
+}
+.buttons{display:flex;
+  direction: row;
+  justify-content: center;
+  margin:auto;
+}
+.buttons button{margin-right:2%;
+margin-bottom:1.5%;}
 footer {
     background-color: black;
     color: white;
@@ -272,6 +342,8 @@ footer {
     text-decoration: none;
   }
   @media only screen and (max-width: 900px) {.writeup{flex-direction: column;}
+    input[type="number"]::placeholder{font-size: 40%;}
+    .save,.btn{font-size: 100%;}
     ul li a span {
       display: none;
     }

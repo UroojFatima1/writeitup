@@ -27,6 +27,7 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+body{ background-color: rgb(219, 219, 243);}
 /*Nav Bar*/
 nav {
     height: fit-content;
@@ -207,7 +208,7 @@ justify-content: left;
 align-items: left;
 justify-self: left;}
 input[type="file"]{display: none;}
-.rectangle {margin-left: 20rem;
+.rectangle {margin-left: 30%;
   height: 300px;
   width: 250px;
   margin-top:4rem;
@@ -228,7 +229,7 @@ input[type="file"]{display: none;}
     align-items: left;
    }
 
-.rectangle span{
+   .rectangle span{
     display:flex;
     font-family: 'Josefin Slab', serif;
     font-weight: 600;
@@ -249,13 +250,12 @@ input[type="file"]{display: none;}
   justify-content: right;
     align-items: right;
     flex-basis: 50%;
-    margin-right: 5rem;
-    margin-left:7rem;
+    margin-right: 4%;
     z-index: 3;
     margin-top: 3rem;
 }
 .input-field{font-family: 'Josefin Slab', serif;
-    max-width:500px;
+    max-width:93%;
     background-color: #f0f0f0;
     border-radius: 55px;
     display: grid;
@@ -418,8 +418,10 @@ footer {margin-top:7rem;
     color: white;
     text-decoration: none;
   }
-  @media only screen and (max-width: 900px) {.writeup{flex-direction: column;}
-  .clear{margin-bottom: 4rem;}
+  @media only screen and (max-width: 900px) {.writeup{flex-direction: column;
+    flex-wrap: nowrap;}
+     .form{margin-top:9rem;
+     margin-left:10%;}
     ul li a span {
       display: none;
     }
