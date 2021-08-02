@@ -40,7 +40,7 @@ include_once "../config.php";
                 <a href="../chat/chat.php">Inbox</a>
                     <a href="#">Notifications
                     <a href="../index.html#footer">Help</a>
-                    <a href="#">Logout</a>
+                    <a href="../logout.php">Logout</a>
                 </div>
             </li>
         </ul>

@@ -11,7 +11,7 @@ if(isset($_POST["login"])){
         $row=mysqli_fetch_assoc($user);
         $_SESSION['si_username']=$row['username'];
         $_SESSION['dp']=$row['dp'];
-        echo "<script>window.location.href='../reader/reader.php';</script>";
+        echo "<script>window.location.href='../reader/genre.php';</script>";
     }
     else{
         echo "<script>alert(\"Login details are incorrect. Please try again.\");

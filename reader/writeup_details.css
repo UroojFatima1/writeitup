@@ -269,7 +269,54 @@ li.menu-area:hover{
   font-size: 1.5rem;
   padding-left: 3rem;
 }
-
+.container{
+  border:2px dashed white;
+  margin:4rem;
+  line-height: 1.5;
+  padding:3rem;
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+.story-container{
+  margin:3rem;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:4rem;
+}
+#read_another{
+  display: none;
+}
+.read_show{
+  display:inline;
+}
+.genre-container{
+  padding:0;
+  margin: 2rem 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.genre{
+  height:7rem;
+  width:18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin:1.5rem;
+  border:2px solid white;
+  background: #394f64;
+  color:white;
+  cursor: pointer;
+}
+.proceed{
+  float:right;
+  margin:0rem 6rem;
+  margin-bottom:2rem;
+}
 .btn,
 .clear {
   width: 150px;
@@ -409,28 +456,6 @@ footer {
   color: white;
   text-decoration: none;
 }
-.container{
-  border:2px dashed white;
-  margin:4rem;
-  line-height: 1.5;
-  padding:3rem;
-  font-size: 2.3rem;
-  font-weight: bold;
-}
-.story-container{
-  margin:3rem;
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom:4rem;
-}
-#read_another{
-  display: none;
-}
-.read_show{
-  display:inline;
-}
 @media only screen and (max-width: 900px) {
   ul li a span {
     display: none;
@@ -459,5 +484,55 @@ footer {
   .story-container{
     margin:1rem;
     margin-bottom:4rem;
+  }
+  .genre{
+    height:7rem;
+    width:12rem;
+}
+  .genre-container{
+    margin:0rem 3rem;
+  }
+  .proceed{
+    margin:2rem 3rem;
+  }
+}
+@media only screen and (max-width:480px) {
+  ul li a span {
+    display: none;
+  }
+  .search-box {
+    display: none;
+  }
+  .search-r {
+    display: block;
+  }
+  .write {
+    display: none;
+  }
+  .forms-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form{
+    margin:auto;
+    margin-top: 2rem;
+  }
+  .container{
+    font-size: 1.75rem;
+  }
+  .story-container{
+    margin:1rem;
+    margin-bottom:4rem;
+  }
+  .genre{
+    height:7rem;
+    width:12rem;
+}
+  .genre-container{
+    margin:0rem 3rem;
+  }
+  .proceed{
+    margin:2rem 3rem;
   }
 }

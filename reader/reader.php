@@ -1,17 +1,6 @@
 <?php
 include '../config.php';
 session_start();
-$display_cover = mysqli_query($conn, "SELECT DISTINCT * from story");
-$result = mysqli_fetch_assoc($display_cover);
-$_SESSION["cover"] = $result["coverPage"];
-$_SESSION["title"] = $result["title"];
-$_SESSION["authorUsername"] = $result["authorUsername"];
-$_SESSION["desc"] = $result["description"];
-$_SESSION["genre"] = $result["genre"];
-$_SESSION["rating"] = $result["rating"];
-$_SESSION["chapterNumber"] = $result["chapterNumber"];
-$_SESSION["noOfChapters"] = $result["noOfChapters"];
-$_SESSION["text"] = $result["text"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +20,7 @@ $_SESSION["text"] = $result["text"];
 </head>
 
 <body>
-<nav class="topnav">
+    <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
             <input type="search" placeholder="Browse">
@@ -46,8 +35,8 @@ $_SESSION["text"] = $result["text"];
                 <div class="menu">
                     <a href="../chat/chat.php">Inbox</a>
                     <a href="#">Notifications
-                    <a href="../index.html#footer">Help</a>
-                    <a href="#">Logout</a>
+                        <a href="../index.html#footer">Help</a>
+                        <a href="../logout.php">Logout</a>
                 </div>
             </li>
         </ul>
@@ -60,7 +49,18 @@ $_SESSION["text"] = $result["text"];
         <div class="row">
             <h2>Continue Reading</h2>
             <div class="row-posters">
-                <img class="poster" src="../cover-pages/<?php echo $_SESSION["cover"]; ?>" alt="book" onclick="loadStory()" />
+                <?php
+                $all_covers = mysqli_query($conn, "SELECT DISTINCT title,authorUsername,description,genre,coverPage,rating,noOfChapters FROM story");
+                foreach ($all_covers as $result) {
+                    /*$_SESSION["chapterNumber"] = $result["chapterNumber"];
+                    $_SESSION["text"] = $result["text"];
+                    */
+                
+                ?>
+                    <img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book" onclick="loadStory()" />
+                <?php
+                }
+                ?>
             </div>
         </div>
         <!--Trending-->
@@ -122,6 +122,6 @@ $_SESSION["text"] = $result["text"];
             </ul>
         </div>
     </footer>
-<script src="reader.js"></script>
+    <script src="reader.js"></script>
 </body>
 </html>

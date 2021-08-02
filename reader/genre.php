@@ -1,35 +1,26 @@
 <?php
+include '../config.php';
 session_start();
-include_once "../config.php";
-/*if($_SESSION['chapterNumber']== $_SESSION["noOfChapters"]){
-    echo "
-    <script>alert('last chapter');</script>";}
-*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/jpg" href="favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="writeup_details.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!---Fonts-->
-    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WriteItUp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="writeup_details.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
-<nav class="topnav">
+    <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
             <input type="search" placeholder="Browse">
@@ -42,26 +33,31 @@ include_once "../config.php";
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                <a href="../chat/chat.php">Inbox</a>
+                    <a href="../signin-signup/chat/chat.php">Inbox</a>
                     <a href="#">Notifications
-                    <a href="../index.html#footer">Help</a>
-                    <a href="../logout.php">Logout</a>
+                        <a href="../index.html#footer">Help</a>
+                        <a href="../logout.php">Logout</a>
                 </div>
             </li>
         </ul>
     </nav>
     <div class="spikes">
-        <h2 class="heading">Chapter No: <?php echo $_SESSION["chapterNumber"];?></h2>
+        <h2 class="heading">Select your favourite genres!</h2>
     </div>
-    <div class="story-container">
-    <div class="container">
-    <?php echo $_SESSION["text"];?>
+    <div class="container genre-container">
+        <?php
+                $display_genres=mysqli_query($conn,"SELECT genre_name FROM genre ORDER BY genre_name");
+                foreach($display_genres as $genre)
+        {
+        ?>
+            <span class="genre">
+                <?php echo $genre["genre_name"]; ?>
+            </span>
+        <?php
+        }
+        ?>
     </div>
-    <form action="next_chapter.php" method="post" name="next">
-    <input type="submit" value="Next Chapter" class="btn" name="next" id="next">
-    <input type="submit" value="Read Another" class="btn" id="read_another">
-    </form>
-    </div>
+    <button class="btn proceed">Proceed</button>
     <footer>
         <div class="footer-logo">
             <div class="footer-logo">WriteItUp</div>
@@ -87,5 +83,11 @@ include_once "../config.php";
         </div>
     </footer>
     <script src="reader.js"></script>
+    <script>
+        var proceed=document.querySelector(".proceed");
+        proceed.addEventListener("click",()=>{
+            window.location.href="reader.php";
+        });
+    </script>
 </body>
 </html>

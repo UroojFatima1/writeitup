@@ -1,5 +1,6 @@
 <?php
 include '../config.php';
+session_start();
 if (isset($_POST["register"])) {
     $username = mysqli_real_escape_string($conn, $_POST["su_username"]);
     $email = mysqli_real_escape_string($conn, $_POST["su_email"]);
@@ -19,18 +20,19 @@ if (isset($_POST["register"])) {
         echo ("<script>alert(\"This username already exists. Enter a new one.\");
         window.location.href='signin.html';
         </script>");
-    } else {
+    } else{
         $status="Active now";
         $insert_q = "INSERT INTO users (username,email,dob,pass,dp,status) VALUES ('$username','$email','$dob','$pass','$dpName','$status');";
         $insertion = mysqli_query($conn, $insert_q);
         $select_dp="SELECT * FROM users where username='$username'";
         $selection_dp=mysqli_query($conn,$select_dp);
         if (move_uploaded_file($dpTmpName,$folder)) {
-            $_SESSION['dp']=$result['dp'];
+            $select_array=mysqli_fetch_assoc($selection_dp);
+            $_SESSION["si_username"]=$select_array["username"];
+            $_SESSION["dp"]=$select_array["dp"];
         }
         if ($insertion) {
-            echo "<script>alert(\"User registration successful. Please login now.\");
-            window.location.href='signin.html';</script>";
+            echo "<script>window.location.href='../reader/genre.php';</script>";
         } else {
             echo "<script>alert(\"Username registration unsuccessful.\");
             window.location.href='signin.html';
