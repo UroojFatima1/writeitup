@@ -1,3 +1,4 @@
+var form=document.querySelector("form");
 var image=document.getElementById("fileinput");
 var p=document.getElementById("plustext");
 var btn=document.getElementById("clearb");
@@ -18,10 +19,12 @@ img.style.display="block";
 p.style.display="none";
 btn.style.display="flex";
 
+
 })
-btn.addEventListener("click",(event) =>{var img = document.getElementById('output');
+btn.addEventListener("click",clear)
+function clear(){var img = document.getElementById('output');
 btn.disabled = true;
 img.src="";
 img.style.display="none";
 p.style.display="block";
-btn.style.display="none";})
+btn.style.display="none";}

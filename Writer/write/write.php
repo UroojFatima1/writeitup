@@ -16,13 +16,15 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>   <!---To add icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  <!---To add icons-->
     <link rel="stylesheet" href="write.css">   
     <link rel="preconnect" href="https://fonts.gstatic.com">   <!---Fonts-->
     <link rel="shortcut icon" href="../../favicon.png" type="image/x-icon" />
     <title>WriteItUp</title>
 </head>
 <body>
+ <!---<script type='text/javascript' src="script.js"></script>-->
 <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
@@ -55,12 +57,14 @@ session_start();
             <div class="chapter" ><input type="number" min="1" max="20" required name="chap" autocomplete="off" placeholder="Choose between 1 to 20"></div>
             <hr>
             <div class="story-container">
-            <textarea name="story" spellcheck="true" placeholder="Write your story here" class="story" autocomplete="off"></textarea></div>
+            <textarea name="story"  spellcheck="true" placeholder="Write your story here" class="story" autocomplete="off"></textarea></div>
             <div class="save" ><input type="submit" name="save" value="Save"></div>
+            <input type="hidden" name="id" id="id">
+            <div id="autosave" ></div>
             </form>
         </div>
-        <div class="buttons"><button class="btn" name="next" id="next" method="POST">Next Chapter</button>
-            <button class="btn">Completed</button></div>
+        <div class="buttons"><button class="btn" name="next" id="next" method="POST" onclick="location.href='write.php'">Next Chapter</button>
+            <button class="btn" onclick="location.href='completed.php'">Completed</button></div>
     <footer><div class="footer-logo">
             <div class="footer-logo">WriteItUp</div>
             <p>&copy; CopyRight 2021</p>
@@ -84,6 +88,6 @@ session_start();
             </ul>
         </div>
     </footer>
-    <script src="write.js"></script>
+
 </body>
 </html>

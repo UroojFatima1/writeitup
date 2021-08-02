@@ -13,9 +13,9 @@ session_start();
     $user=mysqli_query($conn,"SELECT * from users where username='$username'");
     if(mysqli_num_rows($user)>0){
         $folder="../cover-pages/".$dpname;
-        $insert_q = "INSERT INTO story (title, authorUsername, genre, coverPage, description, rating) VALUES ('$title','$username','$genre','$dpname','$description','$rating');";
+        $insert_q = "INSERT INTO details (title, authorUsername, genre, coverPage, description, rating) VALUES ('$title','$username','$genre','$dpname','$description','$rating');";
         $insertion = mysqli_query($conn, $insert_q);
-        $select_dp=mysqli_query($conn,"SELECT * FROM story where authorUsername='$username' and title='$title'");
+        $select_dp=mysqli_query($conn,"SELECT * FROM details where authorUsername='$username' and title='$title'");
         $row=mysqli_fetch_assoc($select_dp);
         $_SESSION["titlename"]=$row["title"];
         $selection_dp=mysqli_query($conn,$select_dp);
@@ -25,7 +25,8 @@ session_start();
             </script>";
 
         }
-    }}
+    }
+}
 
 
 ?>

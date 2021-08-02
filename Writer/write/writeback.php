@@ -2,20 +2,18 @@
 include_once '../../signin-signup/config.php';
 session_start();
 
-if (isset($_POST['save'])) {
-    $username=$_SESSION['si_username'];
+if (isset($_POST['save'])) {$username=$_SESSION['si_username'];
     $title=$_SESSION['titlename'];
-    $chapno=mysqli_real_escape_string($conn,$_POST["chap"]);
+    $chapno=mysqli_real_escape_string($conn, $_POST["chap"]);
+    $story=mysqli_real_escape_string($conn, $_POST["story"]);
     
-    $story=mysqli_real_escape_string($conn,$_POST["story"]);
-    $user=mysqli_query($conn,"SELECT authorUsername,title from story where authorUsername='$username' AND title='$title'");
-    if(mysqli_num_rows($user)>0){
-        $sql = mysqli_query($conn, "UPDATE story SET chapterNumber = '$chapno',text = '$story' where authorUsername='$username' AND title='$title'");}
-    else{
-        echo "<script>alert(\"not done.\");
-        
-        </script>";
+    $sql = "INSERT INTO story (authorUsername,title,chapterNumber,text) VALUES ('$username','$title','$chapno','$story');";
     
-}}
+    $insertion = mysqli_query($conn, $sql);
+    
+    $_SESSION["chap"]=$chapno;
+    $_SESSION["novel"]=$story;
+    echo ($_SESSION["novel"]);}
+
 
 ?>

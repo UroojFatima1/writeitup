@@ -56,9 +56,9 @@ session_start();
                     <div id="plustext">
                         <label id="plus" for="fileinput">&plus;</label>
                         <input type="file" name="uploadfile" id="fileinput"> 
-                        <span>Add Cover</span>
+                        <span class="addcover">Add Cover</span>
                     </div>
-                    <div class="clearbtn" id="clearb" ><button class="clear" name="clear">Clear</button></div>
+                    <div class="clearbtn" id="clearb" ><div class="clear" name="clear" ><p>Clear</p></div></div>
                 </div>
                
             </div>

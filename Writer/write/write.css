@@ -27,7 +27,9 @@ body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
-body{ background-color: rgb(219, 219, 243);}
+body {
+  background-color: rgb(233, 233, 236);
+}
 .container{
   border:2px dashed white;
   margin:4rem;
@@ -239,6 +241,11 @@ min-width: 30vw;}
   text-transform: uppercase;
   font-family: "Fredericka the Great", cursive;
   transition: all 0.5s;}
+.btn{cursor:pointer;
+  font-size:1rem;
+  font-weight: 400;
+  color: black;
+  background: white;}
 .save input:hover{
 background: #2c3e50;
   cursor: pointer;
