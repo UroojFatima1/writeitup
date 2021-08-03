@@ -8,7 +8,7 @@
   $title = mysqli_real_escape_string($connect, $_POST["titl"]);
   $authorUsername = mysqli_real_escape_string($connect, $_POST["username"]);
 
-  $usql=mysqli_query($connect,"SELECT chapterNumber from story where title = '".$_POST["titl"]."' AND authorUsername = '".$_POST["username"]."'");
+  $sql=mysqli_query($connect,"SELECT chapterNumber from story where title = '".$_POST["titl"]."' AND authorUsername = '".$_POST["username"]."'");
 
   if($_POST["Id"] != '')  
   {  

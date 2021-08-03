@@ -1,14 +1,14 @@
 <?php
 include_once '../../signin-signup/config.php';
 session_start();
-
-
 $username=$_SESSION['si_username'];
-    $title=$_SESSION['titlename'];
+$title=$_SESSION['titlename'];
+$query=mysqli_query($conn,"SELECT * from details where title = '$title'AND authorUsername = '$username'");
+if(mysqli_num_rows($query)>0){
     $comp=1;
-    echo ($username);
 
-$sql = mysqli_query($conn, "UPDATE details SET completed = 1 where authorUsername='$username' AND title='$title");
-    
+
+$sql = mysqli_query($conn, "UPDATE details SET completed = '$comp' where authorUsername='$username' AND title='$title'");
+}
 
 ?>
