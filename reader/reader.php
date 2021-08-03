@@ -10,6 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WriteItUp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet" />
@@ -23,11 +24,11 @@ session_start();
     <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
-            <input type="search" placeholder="Browse">
+            <input type="text" placeholder="Browse" name="search" id="search" autocomplete="off">
             <i class="fa fa-search" id="search-icon"></i>
         </div>
         <ul class="nav" id="navi">
-            <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
+            <li><a class="navbtn search-r"><i class="fa fa-search"></i></a><li>
             <li><a href="../Writer/writer.php" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
@@ -41,7 +42,10 @@ session_start();
             </li>
         </ul>
     </nav>
+   
     <div class="container">
+    <div class="result" id="result" > </div>
+        
         <div class="spikes">
             <h2 class="welcome">Welcome, <?php echo $_SESSION["si_username"]; ?> .</h2>
         </div>
@@ -49,11 +53,11 @@ session_start();
         <div class="row">
             <h2>Continue Reading</h2>
             <div class="row-posters">
-                <?php
+            <?php
                 $all_covers = mysqli_query($conn, "SELECT coverPage FROM details");
-                for($i=0,i<$all_covers.len as $result) {
+                foreach ($all_covers as $result) {
                 ?>
-                    <img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book" onclick='let cover="<?php echo $result["coverPage"];?>";console.log(cover);'/>
+                    <img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book" />
                 <?php
                 }
                 ?>
@@ -121,3 +125,5 @@ session_start();
     <script src="reader.js"></script>
 </body>
 </html>
+
+    

@@ -12,6 +12,11 @@ session_start();
     $dpTmpName = $_FILES['uploadfile']['tmp_name']; //used to move image in folder
     $user=mysqli_query($conn,"SELECT * from users where username='$username'");
     if(mysqli_num_rows($user)>0){
+        $query=mysqli_query($conn,"SELECT * from details where authorUsername='$username' and title='$title'");
+        if(mysqli_num_rows($query)>0){
+
+        }
+        else{
         $folder="../cover-pages/".$dpname;
         $insert_q = "INSERT INTO details (title, authorUsername, genre, coverPage, description, rating) VALUES ('$title','$username','$genre','$dpname','$description','$rating');";
         $insertion = mysqli_query($conn, $insert_q);
@@ -26,7 +31,7 @@ session_start();
 
         }
     }
-}
+}}
 
 
 ?>

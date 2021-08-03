@@ -26,3 +26,22 @@ function loadStory(src) {
     alert(src);
     //window.location.href = 'writeup_details.php';
 }
+
+$(document).ready(function() {
+    $("#search").keyup(function() {
+        var name = $('#search').val();
+        if (name == "") { 
+            $("#result").html("");}
+        else {
+            $.ajax({
+                type: "POST",
+                url: "search.php",
+                data: {search: name},
+                success: function(html) {
+                    //Assigning result to "display" div in "search.php" file.
+                    $("#result").html(html).show();
+                }
+            });
+        }
+    });
+ });

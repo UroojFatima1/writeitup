@@ -40,8 +40,7 @@ if(!isset($_SESSION['si_username'])){
                 $user_id=mysqli_real_escape_string($conn,$_GET['user_id']);
                 $sql = mysqli_query($conn, "SELECT * FROM users WHERE username='$user_id'");
                 if(mysqli_num_rows($sql) > 0){
-                $row = mysqli_fetch_assoc($sql);
-                }
+                $row = mysqli_fetch_assoc($sql);}
             ?>
             <a href="chat.php" class="back-icon"><i class="fa fa-arrow-left"></i></a>
             <img src="../user-dps/<?php echo $row['dp']; ?>" alt="">

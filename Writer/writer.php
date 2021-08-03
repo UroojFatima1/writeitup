@@ -48,7 +48,7 @@ session_start();
         <div class="spikes">
             <h1 class="heading">Start Writing!</h1></div>
             
-    <form action="writerback.php" method="POST" name="writer" enctype="multipart/form-data" >
+    <form action="writerback.php" method="POST" name="writer" enctype="multipart/form-data" autocomplete="off">
         <div class="writeup">
             <div class="rect">
                 <div class="rectangle">
