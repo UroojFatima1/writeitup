@@ -16,7 +16,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="writeup_details.css" />
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -42,22 +42,23 @@ session_start();
         </ul>
     </nav>
     <div class="spikes">
-        <h2 class="heading">Select your favourite genres!</h2>
+        <h2 class="heading">Select your favourite genres.</h2>
     </div>
     <div class="container genre-container">
         <?php
-                $display_genres=mysqli_query($conn,"SELECT genre_name FROM genre ORDER BY genre_name");
-                foreach($display_genres as $genre)
-        {
+        $display_genres = mysqli_query($conn, "SELECT genre_name FROM genre ORDER BY genre_name");
+        foreach ($display_genres as $genre) {
         ?>
-            <span class="genre">
+            <span class="genre" id="<?php echo $genre["genre_name"] ?>" onclick="select(this.id)">
                 <?php echo $genre["genre_name"]; ?>
             </span>
         <?php
         }
         ?>
     </div>
-    <button class="btn proceed">Proceed</button>
+    <form action="save_genres.php" method="post">
+    <input name="proceed" class="btn proceed" id="proceed" value="Proceed" type="submit">
+    </form>
     <footer>
         <div class="footer-logo">
             <div class="footer-logo">WriteItUp</div>
@@ -84,10 +85,15 @@ session_start();
     </footer>
     <script src="reader.js"></script>
     <script>
-        var proceed=document.querySelector(".proceed");
-        proceed.addEventListener("click",()=>{
-            window.location.href="reader.php";
-        });
+        var s_genres = [];
+        var genre_box = document.querySelector(".genre");
+        let select = function(id) {
+            var box = document.getElementById(id);
+            s_genres.push(id);
+            box.classList.add("selected");
+            console.log(s_genres);
+        };
     </script>
 </body>
+
 </html>

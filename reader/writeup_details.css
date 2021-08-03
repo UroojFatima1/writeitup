@@ -297,6 +297,7 @@ li.menu-area:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 .genre{
@@ -316,6 +317,11 @@ li.menu-area:hover{
   float:right;
   margin:0rem 6rem;
   margin-bottom:2rem;
+}
+.selected{
+  border:2px solid #394f64;
+  color: #394f64;
+  background:white;
 }
 .btn,
 .clear {

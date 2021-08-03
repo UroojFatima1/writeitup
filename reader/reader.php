@@ -16,7 +16,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="reader.css" />
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -50,14 +50,10 @@ session_start();
             <h2>Continue Reading</h2>
             <div class="row-posters">
                 <?php
-                $all_covers = mysqli_query($conn, "SELECT DISTINCT title,authorUsername,description,genre,coverPage,rating,noOfChapters FROM story");
-                foreach ($all_covers as $result) {
-                    /*$_SESSION["chapterNumber"] = $result["chapterNumber"];
-                    $_SESSION["text"] = $result["text"];
-                    */
-                
+                $all_covers = mysqli_query($conn, "SELECT coverPage FROM details");
+                for($i=0,i<$all_covers.len as $result) {
                 ?>
-                    <img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book" onclick="loadStory()" />
+                    <img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book" onclick='let cover="<?php echo $result["coverPage"];?>";console.log(cover);'/>
                 <?php
                 }
                 ?>

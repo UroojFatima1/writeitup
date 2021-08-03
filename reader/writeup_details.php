@@ -49,7 +49,7 @@ include_once "../config.php";
         <h2 class="heading"><?php echo $_SESSION["title"]; ?></h2>
     </div>
     <div class="forms-container">
-        <div class="rectangle"><img id="output" src="../cover-pages/<?php echo $_SESSION["cover"]; ?>"></div>
+        <div class="rectangle"><img id="output" src="../cover-pages/<?php echo $result["coverPage"]; ?>"></div>
         <div class="form">
             <div class="input-field">
                 <i class="fa fa-book"></i>
@@ -69,7 +69,7 @@ include_once "../config.php";
                 <input type="text" name="rating" class="inp" disabled value="Rating:  <?php echo $_SESSION["rating"] ?>">
             </div>
             <div class="btncontainer">
-                <button class="btn" id="read_button">Start Reading</button>
+                <button class="btn" id="read_button" onclick="window.location.href = 'writeup_story.php';">Start Reading</button>
             </div>
         </div>
     </div>

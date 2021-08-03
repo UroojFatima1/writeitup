@@ -7,7 +7,6 @@ search_icon.addEventListener("click", toggle);
 var dropdown=document.querySelector(".dp");
 var menu=document.querySelector(".menu");
 dropdown.addEventListener("click",show_menu);
-read_button.addEventListener("click", redirect);
 function show_menu(){
 if(menu.style.display=="none"){
     menu.style.display="block";
@@ -23,9 +22,7 @@ function toggle() {
     logo.style.display = "none";
     list_items.style.display = "none";
 }
-function loadStory() {
-    window.location.href = 'writeup_details.php';
-}
-function redirect() {
-    window.location.href = 'writeup_story.php';
+function loadStory(src) {
+    alert(src);
+    //window.location.href = 'writeup_details.php';
 }
