@@ -7,7 +7,7 @@ $(document).ready(function(){
             $.ajax({
                 url:"writeback.php",
                 method:"POST",
-                data:{chapterNumber:chap,text:story},
+                data:{chapterNumber:chap,text:story,id:id},
                 dataType:"text",
                 success:function(data){
                     if (data!=''){$('#id').val(data);}

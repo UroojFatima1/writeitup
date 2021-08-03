@@ -215,7 +215,7 @@ textarea{ border: none;
   font-size:2.3rem;
   color:black;
   font-weight: 500;}
-.chapter,.save{display: flex;
+.chapter{display: flex;
   justify-content: center;}
 .container label{ font-size:2.5rem;}
 input[type="number"]{border: none;
@@ -229,7 +229,7 @@ input[type="number"]{border: none;
   text-align: center;
   align-items: center;
 min-width: 30vw;}
-.save input,.btn{width: 125px;
+.btn{width: 125px;
   height: 50px;
   background: #394f64;
   border-radius: 55px;
@@ -246,7 +246,7 @@ min-width: 30vw;}
   font-weight: 400;
   color: black;
   background: white;}
-.save input:hover{
+.btn:hover{
 background: #2c3e50;
   cursor: pointer;
 }
@@ -350,7 +350,7 @@ footer {
   }
   @media only screen and (max-width: 900px) {.writeup{flex-direction: column;}
     input[type="number"]::placeholder{font-size: 40%;}
-    .save,.btn{font-size: 100%;}
+    .btn{font-size: 100%;}
     ul li a span {
       display: none;
     }

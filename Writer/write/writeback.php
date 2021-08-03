@@ -1,19 +1,28 @@
-<?php
-include_once '../../signin-signup/config.php';
-session_start();
+ 
+ <?php  
+ $connect = mysqli_connect("localhost", "root", "", "writeitup");
+ if(isset($_POST["chap"]) && isset($_POST["story"]))
+ {
+  $chapterNumber = mysqli_real_escape_string($connect, $_POST["chap"]);
+  $text = mysqli_real_escape_string($connect, $_POST["story"]);
+  $title = mysqli_real_escape_string($connect, $_POST["titl"]);
+  $authorUsername = mysqli_real_escape_string($connect, $_POST["username"]);
 
-if (isset($_POST['save'])) {$username=$_SESSION['si_username'];
-    $title=$_SESSION['titlename'];
-    $chapno=mysqli_real_escape_string($conn, $_POST["chap"]);
-    $story=mysqli_real_escape_string($conn, $_POST["story"]);
-    
-    $sql = "INSERT INTO story (authorUsername,title,chapterNumber,text) VALUES ('$username','$title','$chapno','$story');";
-    
-    $insertion = mysqli_query($conn, $sql);
-    
-    $_SESSION["chap"]=$chapno;
-    $_SESSION["novel"]=$story;
-    echo ($_SESSION["novel"]);}
+  $usql=mysqli_query($connect,"SELECT chapterNumber from story where title = '".$_POST["titl"]."' AND authorUsername = '".$_POST["username"]."'");
 
-
-?>
+  if($_POST["Id"] != '')  
+  {  
+    //update post  
+    $sql = "UPDATE story SET chapterNumber = '".$chapterNumber."', text = '".$text."' WHERE id = '".$_POST["Id"]."' AND title = '".$_POST["titl"]."' AND authorUsername = '".$_POST["username"]."'"; 
+    mysqli_query($connect, $sql);  
+  }  
+  else  
+  {  
+    //insert post  
+    $sql = "INSERT INTO story (chapterNumber , text,authorUsername,title) VALUES ('".$chapterNumber."', '".$text."', '".$authorUsername."', '".$title."')";  
+    mysqli_query($connect, $sql);  
+    echo mysqli_insert_id($connect);  
+  }
+ }  
+ ?>
+ 

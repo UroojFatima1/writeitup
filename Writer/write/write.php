@@ -16,15 +16,14 @@ session_start();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  <!---To add icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>   <!---To add icons-->
     <link rel="stylesheet" href="write.css">   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">   <!---Fonts-->
     <link rel="shortcut icon" href="../../favicon.png" type="image/x-icon" />
     <title>WriteItUp</title>
 </head>
 <body>
- <!---<script type='text/javascript' src="script.js"></script>-->
 <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
@@ -50,21 +49,20 @@ session_start();
     <div class="spikes">
         <h2 class="heading"><?php echo $_SESSION["titlename"];?></h2>
     </div>
-        
+    <?php $session_value=(isset($_SESSION['si_username']))?$_SESSION['si_username']:''; ?>
+    <?php $session_value1=(isset($_SESSION['titlename']))?$_SESSION['titlename']:''; ?>
         <div class="container">
+            
             <label for="chap" class="chapter">Chapter No</label>
-            <form action="writeback.php" method="POST">
-            <div class="chapter" ><input type="number" min="1" max="20" required name="chap" autocomplete="off" placeholder="Choose between 1 to 20"></div>
+            <div class="chapter" ><input type="number" required name="chapterNumber" id="chapterNumber" autocomplete="off" placeholder="Choose number"></div>
             <hr>
             <div class="story-container">
-            <textarea name="story"  spellcheck="true" placeholder="Write your story here" class="story" autocomplete="off"></textarea></div>
-            <div class="save" ><input type="submit" name="save" value="Save"></div>
-            <input type="hidden" name="id" id="id">
-            <div id="autosave" ></div>
-            </form>
+            <textarea name="text" spellcheck="true" placeholder="Write your story here" class="story"  id="text" autocomplete="off"></textarea></div>
+            <input type="hidden" name="id" id="id" /> 
+            <div id="autosave"></div>   
         </div>
-        <div class="buttons"><button class="btn" name="next" id="next" method="POST" onclick="location.href='write.php'">Next Chapter</button>
-            <button class="btn" onclick="location.href='completed.php'">Completed</button></div>
+        <div class="buttons"><button class="btn" name="next" id="next" >Next Chapter</button>
+            <button class="btn">Completed</button></div>
     <footer><div class="footer-logo">
             <div class="footer-logo">WriteItUp</div>
             <p>&copy; CopyRight 2021</p>
@@ -87,7 +85,44 @@ session_start();
                 <a href="https://www.instagram.com/writeitup" target="_blank"><i class="fab fa-instagram f"></i></a>
             </ul>
         </div>
-    </footer>
-
+    </footer>  
 </body>
 </html>
+
+<script>  
+
+ $(document).ready(function(){  var btn = document.getElementById('next');
+    btn.addEventListener('click', function() {
+    location.href = "nextchapter.php";
+    });
+      function autosave()  
+      {    var authorUsername='<?php echo $session_value;?>';
+            var title='<?php echo $session_value1;?>';
+           var chapterNumber = $('#chapterNumber').val();  
+           var text = $('#text').val();  
+           var id = $('#id').val();  
+           if(text != '' && chapterNumber != '')  
+           {  
+                $.ajax({  
+                     url:"writeback.php",  
+                     method:"POST",  
+                     data:{chap:chapterNumber, story:text, Id:id,username:authorUsername,titl:title},  
+                     dataType: "json",  
+                     success:function(data)  
+                     {  
+                          if(data != '')  
+                          {  
+                               $('#id').val(data);  
+                          }  
+                          $('#autosave').text("Post save as draft");
+                           
+                         
+                     }  
+                });  
+           }            
+      }  
+      setInterval(function(){   
+           autosave();   
+           }, 5000);  
+ });  
+ </script>

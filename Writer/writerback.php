@@ -20,7 +20,7 @@ session_start();
         $_SESSION["titlename"]=$row["title"];
         $selection_dp=mysqli_query($conn,$select_dp);
         if (move_uploaded_file($dpTmpName,$folder)) {
-            echo $_SESSION['title'];
+            echo $_SESSION['titlename'];
             echo "<script>window.location.href='write/write.php';
             </script>";
 
