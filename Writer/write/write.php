@@ -62,7 +62,7 @@ session_start();
             <div id="autosave"></div>   
         </div>
         <div class="buttons"><button class="btn" name="next" id="next" >Next Chapter</button>
-            <button class="btn">Completed</button></div>
+            <button class="btn" name="Completed" id="Completed" >Story Completed</button></div>
     <footer><div class="footer-logo">
             <div class="footer-logo">WriteItUp</div>
             <p>&copy; CopyRight 2021</p>
@@ -94,6 +94,10 @@ session_start();
  $(document).ready(function(){  var btn = document.getElementById('next');
     btn.addEventListener('click', function() {
     location.href = "nextchapter.php";
+    });
+    var btn = document.getElementById('Completed');
+    btn.addEventListener('click', function() {
+    location.href = "completed.php";
     });
       function autosave()  
       {    var authorUsername='<?php echo $session_value;?>';

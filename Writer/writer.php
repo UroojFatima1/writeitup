@@ -73,17 +73,17 @@ session_start();
                 </div>
                 <div class="input-field">
                     <i class="fa fa-server"></i>
-                    <select required class="inp" name="genre">
-                        <option>Select a genre</option>
-                        <option>Action</option>
-                        <option>Comedy</option>
-                        <option>Drama</option>
-                        <option>Fantasy</option>
-                        <option>Fiction</option>
-                        <option>Horror</option>
-                        <option>Mystery</option>
-                        <option>Romantic</option>
-                        <option>Thriller</option>
+                    <select required class="inp" name="genre" required>
+                        <option value="" disabled selected hidden>Select a genre</option>
+                         <?php
+                            $sql="SELECT * FROM genre";
+                            $query=mysqli_query($conn,$sql);
+                            if(mysqli_num_rows($query)>0){
+                            while($row=mysqli_fetch_assoc($query)){?>
+                                <option name="option" class="genre" id="<?php echo $row["genre_name"] ?>" value="<?php echo $row["genre_name"]; ?>"><?php echo $row["genre_name"]; ?></option>
+                            <?php
+                            }}
+                            ?>
                     </select>
                 </div>
                 <div class="input-field">
