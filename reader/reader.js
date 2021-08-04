@@ -22,26 +22,14 @@ function toggle() {
     logo.style.display = "none";
     list_items.style.display = "none";
 }
-function loadStory(src) {
-    alert(src);
-    //window.location.href = 'writeup_details.php';
-}
-
-$(document).ready(function() {
-    $("#search").keyup(function() {
-        var name = $('#search').val();
-        if (name == "") { 
-            $("#result").html("");}
-        else {
-            $.ajax({
-                type: "POST",
-                url: "search.php",
-                data: {search: name},
-                success: function(html) {
-                    //Assigning result to "display" div in "search.php" file.
-                    $("#result").html(html).show();
-                }
-            });
-        }
+/*var poster=document.getElementsByClassName("poster");
+for (const book of poster) {
+    book.addEventListener('click',function(){
+        window.location.href = 'writeup_details.php';
     });
- });
+}
+function loadStory() {
+    //let cover="<?php echo $result["coverPage"];?>";
+    //console.log(cover);
+    window.location.href='writeup_details.php';
+}*/

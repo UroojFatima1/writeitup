@@ -1,9 +1,6 @@
 <?php
 session_start();
 include_once "../config.php";
-if(isset($_POST['read_another'])){
-    echo "<script>window.location.href='reader.php';</script>";
-}
 if (isset($_POST['next'])) {
     $_SESSION["chapterNumber"] = $_SESSION["chapterNumber"] + 1;
     $title = $_SESSION['title'];
@@ -13,7 +10,7 @@ if (isset($_POST['next'])) {
         echo "<script>
         alert('This was the last chapter');
         window.location.href='reader.php';</script>";
-    } else {
+    }else {
         $sql = mysqli_query($conn, "SELECT * from story WHERE title='$title' AND authorUsername='$authorUsername' AND chapterNumber='$currentChapter'");
         if (mysqli_num_rows($sql) > 0) {
             $text = mysqli_fetch_assoc($sql);

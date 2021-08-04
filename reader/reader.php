@@ -10,7 +10,6 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WriteItUp</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet" />
@@ -24,28 +23,25 @@ session_start();
     <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
         <div class="search-box">
-            <input type="text" placeholder="Browse" name="search" id="search" autocomplete="off">
+            <input type="search" placeholder="Browse">
             <i class="fa fa-search" id="search-icon"></i>
         </div>
         <ul class="nav" id="navi">
-            <li><a class="navbtn search-r"><i class="fa fa-search"></i></a><li>
+            <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
             <li><a href="../Writer/writer.php" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="../chat/chat.php">Inbox</a>
+                    <a href="../signin-signup/chat/chat.php">Inbox</a>
                     <a href="#">Notifications
-                        <a href="../index.html#footer">Help</a>
-                        <a href="../logout.php">Logout</a>
+                    <a href="../index.html#footer">Help</a>
+                    <a href="../logout.php">Logout</a>
                 </div>
             </li>
         </ul>
     </nav>
-   
     <div class="container">
-    <div class="result" id="result" > </div>
-        
         <div class="spikes">
             <h2 class="welcome">Welcome, <?php echo $_SESSION["si_username"]; ?> .</h2>
         </div>
@@ -53,14 +49,7 @@ session_start();
         <div class="row">
             <h2>Continue Reading</h2>
             <div class="row-posters">
-            <?php
-                $all_covers = mysqli_query($conn, "SELECT coverPage FROM details");
-                foreach ($all_covers as $result) {
-                ?>
-                    <img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book" />
-                <?php
-                }
-                ?>
+               
             </div>
         </div>
         <!--Trending-->
@@ -80,21 +69,14 @@ session_start();
         <div class="row">
             <h2>Suggested For You</h2>
             <div class="row-posters">
-                <img class="poster" src="../images/1.png" alt="book" />
-                <img class="poster" src="../images/2.png" alt="book" />
-                <img class="poster" src="../images/3.png" alt="book" />
-                <img class="poster" src="../images/4.png" alt="book" />
-                <img class="poster" src="../images/5.png" alt="book" />
-                <img class="poster" src="../images/1.png" alt="book" />
-                <img class="poster" src="../images/2.png" alt="book" />
-                <img class="poster" src="../images/3.png" alt="book" />
-                <img class="poster" src="../images/4.png" alt="book" />
-                <img class="poster" src="../images/5.png" alt="book" />
-                <img class="poster" src="../images/1.png" alt="book" />
-                <img class="poster" src="../images/2.png" alt="book" />
-                <img class="poster" src="../images/3.png" alt="book" />
-                <img class="poster" src="../images/4.png" alt="book" />
-                <img class="poster" src="../images/5.png" alt="book" />
+            <?php
+                $all_covers = mysqli_query($conn, "SELECT * FROM details");
+                foreach ($all_covers as $result) {
+                ?>
+                    <a href="writeup_details.php?title=<?php echo $result["title"];?>"><img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book"/></a>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -124,6 +106,5 @@ session_start();
     </footer>
     <script src="reader.js"></script>
 </body>
-</html>
 
-    
+</html>

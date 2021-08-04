@@ -1,6 +1,20 @@
 <?php
 session_start();
 include_once "../config.php";
+$title=$_GET['title'];
+$book_details=mysqli_query($conn,"SELECT * FROM details WHERE title='$title'");
+$details=mysqli_fetch_assoc($book_details);
+$_SESSION["title"] = $details["title"];
+$_SESSION["authorUsername"]=$details["authorUsername"];
+$_SESSION["desc"] = $details["description"];
+$_SESSION["genre"] = $details["genre"];
+$_SESSION["cover"] = $details["coverPage"];
+$_SESSION["rating"] =$details["rating"];
+$_SESSION["noOfChapters"]=$details["noOfChapters"];
+$chapter_details=mysqli_query($conn,"SELECT * FROM story WHERE title='$title'");
+$chapter=mysqli_fetch_assoc($chapter_details);
+$_SESSION["chapterNumber"] = $chapter["chapterNumber"];
+$_SESSION["text"] = $chapter["text"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +51,7 @@ include_once "../config.php";
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                <a href="../chat/chat.php">Inbox</a>
+                    <a href="../signin-signup/chat/chat.php">Inbox</a>
                     <a href="#">Notifications
                     <a href="../index.html#footer">Help</a>
                     <a href="../logout.php">Logout</a>
@@ -46,10 +60,10 @@ include_once "../config.php";
         </ul>
     </nav>
     <div class="spikes">
-        <h2 class="heading"><?php echo $_SESSION["title"]; ?></h2>
+        <h2 class="heading"><?php echo $_GET["title"]; ?></h2>
     </div>
     <div class="forms-container">
-        <div class="rectangle"><img id="output" src="../cover-pages/<?php echo $result["coverPage"]; ?>"></div>
+        <div class="rectangle"><img id="output" src="../cover-pages/<?php echo $_SESSION["cover"]; ?>"></div>
         <div class="form">
             <div class="input-field">
                 <i class="fa fa-book"></i>
