@@ -17,29 +17,33 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>   <!---To add icons-->
-    <link rel="stylesheet" href="writer.css">   
+    <link rel="stylesheet" href="writer.css">  
     <link rel="preconnect" href="https://fonts.gstatic.com">   <!---Fonts-->
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <title>WriteItUp</title>
 </head>
 <body>
 <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
-        <div class="search-box">
-            <input type="search" placeholder="Browse">
-            <i class="fa fa-search" id="search-icon"></i>
+        <div class="search">
+            <div class="search-box">
+                <input type="text" placeholder="Browse" name="search" id="search" autocomplete="off">
+                <i class="fa fa-search" id="search-icon"></i>
+            </div>
+            <div class="result" id="result"></div>
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
+            <li>
             <li><a href="../reader/reader.php" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="../chat/chat.php">Inbox</a>
-                    <a href="#">Notifications
+                    <a href="../signin-signup/chat/chat.php">Inbox</a>
                     <a href="../index.html#footer">Help</a>
-                    <a href="#">Logout</a>
+                    <a href="../logout.php">Logout</a>
                 </div>
             </li>
         </ul>
@@ -110,7 +114,7 @@ session_start();
             <p>&copy; CopyRight 2021</p>
         </div>
         <div class="write">
-            <a href="../Writer/writer.html" class="footer-link">
+            <a href="../Writer/writer.php" class="footer-link">
                 <p>Want to write your <br>own story? <i class="fas fa-edit"></i></p>
             </a>
         </div>

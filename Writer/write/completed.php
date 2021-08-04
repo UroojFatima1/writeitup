@@ -1,5 +1,5 @@
 <?php
-include_once '../../signin-signup/config.php';
+include_once '../../config.php';
 session_start();
 $username=$_SESSION['si_username'];
 $title=$_SESSION['titlename'];

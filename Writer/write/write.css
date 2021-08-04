@@ -159,8 +159,8 @@ nav {
 .menu a{
   display: block;
   transition: 0.5s;
-  color:white;
-  background-color:rgba(128, 128, 128, 0.801);
+  color:black;
+  background-color:white;
 }
 .menu a:hover{
   color:white;
@@ -206,6 +206,10 @@ li.menu-area:hover{
   font-size: 4rem;
   font-weight: lighter;
 }
+#autosave{color:#3a5b7a;
+  font-size:2.3rem;
+  font-weight:bold;
+}
 textarea{ border: none;
   background-color: transparent;
   resize: none;
@@ -214,7 +218,7 @@ textarea{ border: none;
   max-width:90vw;
   font-size:2.3rem;
   color:black;
-  font-weight: 500;}
+  font-weight:bold;}
 .chapter{display: flex;
   justify-content: center;}
 .container label{ font-size:2.5rem;}

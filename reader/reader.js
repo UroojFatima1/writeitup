@@ -1,4 +1,7 @@
-
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
 var search_icon = document.querySelector(".search-r");
 var search_box = document.querySelector(".search-box");
 var logo = document.querySelector(".logonav");
@@ -22,14 +25,22 @@ function toggle() {
     logo.style.display = "none";
     list_items.style.display = "none";
 }
-/*var poster=document.getElementsByClassName("poster");
-for (const book of poster) {
-    book.addEventListener('click',function(){
-        window.location.href = 'writeup_details.php';
+
+$(document).ready(function() {
+    $("#search").keyup(function() {
+        var name = $('#search').val();
+        if (name === "") { 
+            $("#result").html("");}
+        else {
+            $.ajax({
+                type: "POST",
+                url: "search.php",
+                data: {search: name},
+                success: function(html) {
+                    //Assigning result to "display" div in "search.php" file.
+                    $("#result").html(html).show();
+                }
+            });
+        }
     });
-}
-function loadStory() {
-    //let cover="<?php echo $result["coverPage"];?>";
-    //console.log(cover);
-    window.location.href='writeup_details.php';
-}*/
+ });

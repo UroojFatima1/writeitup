@@ -1,5 +1,5 @@
 <?php
-include_once '../../signin-signup/config.php';
+include_once '../../config.php';
 session_start();
 
     ?>
@@ -26,21 +26,24 @@ session_start();
 <body>
 <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
-        <div class="search-box">
-            <input type="search" placeholder="Browse">
-            <i class="fa fa-search" id="search-icon"></i>
+        <div class="search">
+            <div class="search-box">
+                <input type="text" placeholder="Browse" name="search" id="search" autocomplete="off">
+                <i class="fa fa-search" id="search-icon"></i>
+            </div>
+            <div class="result" id="result"></div>
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
-            <li><a href="../Writer/writer.html" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
-            <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
+            <li>
+            <li><a href="../../reader/reader.php" class="navbtn"><span class="text">Read</span> <i class="fas fa-book-open"></i></a></li>
+            <li><a href="../../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
                 <img src="../../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="#">Inbox</a>
-                    <a href="#">Notifications
-                    <a href="#">Help</a>
-                    <a href="#">Logout</a>
+                    <a href="../../signin-signup/chat/chat.php">Inbox</a>
+                    <a href="../../index.html#footer">Help</a>
+                    <a href="../../logout.php">Logout</a>
                 </div>
             </li>
         </ul>
@@ -98,8 +101,8 @@ session_start();
     var btn = document.getElementById('Completed');
     btn.addEventListener('click', function() {
     location.href = "completed.php";
-    });
-      function autosave()  
+    })
+     function autosave()  
       {    var authorUsername='<?php echo $session_value;?>';
             var title='<?php echo $session_value1;?>';
            var chapterNumber = $('#chapterNumber').val();  
@@ -118,7 +121,7 @@ session_start();
                           {  
                                $('#id').val(data);  
                           }  
-                          $('#autosave').text("Post save as draft");
+                          $('#autosave').text("Post saved as draft");
                            
                          
                      }  

@@ -17,24 +17,28 @@ session_start();
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="reader.css" />
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body>
     <nav class="topnav">
         <li><a class="logonav" href="../index.html">WriteItUp</a></li>
-        <div class="search-box">
-            <input type="search" placeholder="Browse">
-            <i class="fa fa-search" id="search-icon"></i>
+        <div class="search">
+            <div class="search-box">
+                <input type="text" placeholder="Browse" name="search" id="search" autocomplete="off">
+                <i class="fa fa-search" id="search-icon"></i>
+            </div>
+            <div class="result" id="result"></div>
         </div>
         <ul class="nav" id="navi">
             <li><a class="navbtn search-r"><i class="fa fa-search"></i></a>
+            <li>
             <li><a href="../Writer/writer.php" class="navbtn"><span class="text">Write</span> <i class="fad fa-marker"></i></a></li>
             <li><a href="../index.html" class="navbtn"><span class="text">Home</span> <i class="fas fa-home"></i></a></li>
             <li class="menu-area">
                 <img src="../signin-signup/user-dps/<?php echo $_SESSION["dp"]; ?>" alt="dp" class="dp">
                 <div class="menu">
-                    <a href="../signin-signup/chat/chat.php">Inbox</a>
-                    <a href="#">Notifications
+                    <a href="../chat/chat.php">Inbox</a>
                     <a href="../index.html#footer">Help</a>
                     <a href="../logout.php">Logout</a>
                 </div>
@@ -45,38 +49,40 @@ session_start();
         <div class="spikes">
             <h2 class="welcome">Welcome, <?php echo $_SESSION["si_username"]; ?> .</h2>
         </div>
-        <!--Continue Reading-->
+        <!--Continue Reading
         <div class="row">
             <h2>Continue Reading</h2>
             <div class="row-posters">
-               
+
             </div>
         </div>
-        <!--Trending-->
-        <div class="row">
-            <h2>Trending</h2>
-            <div class="row-posters trending">
-                <img class="poster" src="../images/2.png" alt="book" />
-                <div class="details">
-                    <p>Title: The Great Amazon</p>
-                    <p>By: Ayesha Khalid</p>
-                    <p>Genre: Adventure</p>
-                    <p>Reads: 345 <i class="fas fa-eye" style="font-size:1.75rem"></i></p>
-                </div>
-            </div>
-        </div>
+        -->
         <!--Suggested Stories-->
         <div class="row">
             <h2>Suggested For You</h2>
             <div class="row-posters">
-            <?php
+                <?php
                 $all_covers = mysqli_query($conn, "SELECT * FROM details");
                 foreach ($all_covers as $result) {
                 ?>
-                    <a href="writeup_details.php?title=<?php echo $result["title"];?>"><img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book"/></a>
+                    <a href="writeup_details.php?title=<?php echo $result["title"]; ?>"><img class="poster" src="../cover-pages/<?php echo $result["coverPage"]; ?>" alt="book" /></a>
                 <?php
                 }
                 ?>
+            </div>
+        </div>
+        <!--Trending-->
+        <div class="row">
+            <h2>Lastest Story</h2>
+            <div class="row-posters trending">
+                <div>
+                    <a href="writeup_details.php?title='The+Silent+Patient'"><img class="poster" src="../cover-pages/the-silent-patient.jpg" alt="book" /></a>
+                </div>
+                <div class="details">
+                    <p>Title: The Silent Patient</p>
+                    <p>By: Alex Michaelides</p>
+                    <p>Genre: Mystery</p>
+                </div>
             </div>
         </div>
     </div>

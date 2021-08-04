@@ -32,6 +32,7 @@ $_SESSION["text"] = $chapter["text"];
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="writeup_details.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!---Fonts-->
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon" />
     <title>WriteItUp</title>

@@ -1,3 +1,28 @@
+
+var search_icon = document.querySelector(".search-r");
+var search_box = document.querySelector(".search-box");
+var logo = document.querySelector(".logonav");
+var list_items = document.querySelector(".nav");
+search_icon.addEventListener("click", toggle);
+var dropdown=document.querySelector(".dp");
+var menu=document.querySelector(".menu");
+dropdown.addEventListener("click",show_menu);
+function show_menu(){
+if(menu.style.display=="none"){
+    menu.style.display="block";
+}
+else{
+    menu.style.display="none";
+}
+}
+function toggle() {
+    search_box.style.display = "flex";
+    search_box.style.margin = "auto";
+    search_icon.style.display = "none";
+    logo.style.display = "none";
+    list_items.style.display = "none";
+}
+
 const form = document.querySelector(".typing-area"),
 incoming_id = form.querySelector(".incoming_id").value,
 inputField = form.querySelector(".input-field"),
@@ -70,4 +95,4 @@ chatBox.onmouseleave = ()=>{
 function scrollToBottom(){
     chatBox.scrollTop = chatBox.scrollHeight;
   }
-  
+

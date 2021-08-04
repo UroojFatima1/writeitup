@@ -11,7 +11,7 @@ include '../config.php';
       <li class="list">
       <a>
           <?php echo $Result['title']; ?>
-      </li></a>
+      </a></li>
       <?php
    }}
    ?>

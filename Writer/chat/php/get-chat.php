@@ -30,7 +30,7 @@
             }
             echo $output;
         }
-        else{  echo ("<script>alert(\"manhoos.\");
+        else{  echo ("<script>alert(\"wait.\");
             </script>");}
    
     

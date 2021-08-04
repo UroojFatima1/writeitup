@@ -11,6 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WriteItUp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap" rel="stylesheet" />
